@@ -11,12 +11,17 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-ap
 main{max-width:760px;margin:0 auto;padding:24px 18px 60px}
 h1{font-size:1.5rem;line-height:1.25}h2{font-size:1.15rem;margin-top:2em}
 .mut{color:var(--mut)}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}
-td,th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+td,th{border:1px solid var(--line);padding:8px 10px;text-align:start;vertical-align:top}
 mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px}
+.lg{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+.lg button{font:inherit;font-size:.85rem;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer}
+.lg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
 </style>
 </head>
 <body>
 <main>
+<nav class="lg" id="lg" aria-label="Language"></nav>
+<div data-l="ru" data-n="Русский" data-t="Политика конфиденциальности: Standard Alarm Clock">
 <h1>Политика конфиденциальности приложения «Standard Alarm Clock»</h1>
 <p class="mut">Действует с 21 ноября 2026. Имя пакета приложения: app.budilnik.my.</p>
 
@@ -48,6 +53,7 @@ mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px}
 <li><b>Уведомления:</b> показ звонка с кнопками «Стоп» и «Отложить» и, по вашему желанию, времени и погоды в шторке.</li>
 <li><b>Точные будильники, запуск после перезагрузки, работа в фоне, вибрация, «не засыпать» во время звонка:</b> чтобы будильник сработал вовремя и звенел, пока вы его не остановите.</li>
 <li><b>Экран на заблокированном телефоне и «Поверх других приложений»:</b> чтобы окно будильника открывалось, когда вы на рабочем столе или в другом приложении. Приложение просит это один раз; включить позже можно в «Настройки → Разрешения приложения».</li>
+<li><b>Работа в фоне на телефонах Xiaomi, Huawei, Samsung и других:</b> строки «Без ограничений батареи» и «Автозапуск и фон» в «Настройки → Разрешения приложения» только открывают системные экраны телефона, где вы сами разрешаете приложению работать в фоне. Данные при этом никуда не передаются, отдельное разрешение не нужно.</li>
 <li><b>Интернет:</b> прогноз погоды и, если включена реклама, показ рекламы.</li>
 </ul>
 <p>Доступ к контактам, камере, микрофону, SMS и местоположению телефона не запрашивается.</p>
@@ -73,6 +79,725 @@ mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px}
 
 <h2>13. Связь</h2>
 <p>Seven Knot, sevenknot.apps@gmail.com. По вопросам о данных и по запросам из раздела 9 пишите на эту почту.</p>
+</div>
+<div data-l="en" data-n="English" data-t="Privacy Policy: Standard Alarm Clock" hidden>
+<h1>Privacy Policy of the app “Standard Alarm Clock”</h1>
+<p class="mut">Effective from November 21, 2026. App package name: app.budilnik.my.</p>
+
+<h2>1. Who is responsible for data processing</h2>
+<p>Seven Knot (the “developer”).<br>
+Contact for data questions: sevenknot.apps@gmail.com.</p>
+
+<h2>2. In short</h2>
+<p>The developer has no server to which the app would send your data. Alarms, timers, names, texts, photos, videos, sounds and settings are stored only in your phone’s memory. The app has no registration or accounts. The only outgoing requests go to third-party services: the weather forecast (Open-Meteo) and, if ads are enabled in the app, ad display (Yandex Ads). They are described below.</p>
+
+<h2>3. What data goes where</h2>
+<table>
+<tr><th>Data</th><th>Why</th><th>Where</th></tr>
+<tr><td>Alarms, timers, stopwatch, their names and texts, photos, videos and sounds you chose, list of cities, settings, trash</td><td>App operation</td><td>Only to the app’s memory on your phone. Not passed to the developer or third parties</td></tr>
+<tr><td>The name of the city you added in the “Weather” section and its coordinates</td><td>Showing the forecast in the app and in the weather widget</td><td>The Open-Meteo service (open-meteo.com). Like any internet service, it sees the device’s IP address. The app does not request the phone’s location</td></tr>
+<tr><td>Only when ads are enabled in the app. Data received by the ad module: advertising ID of the device, IP address, device and app information (for example, model, Android version, language), information about ad impressions and actions on them</td><td>Showing ads, counting impressions, fraud protection</td><td>Yandex Ads (Yandex advertising SDK). The scope of data and the rules for processing it are set by Yandex: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>The app does not collect your name, phone number, email, contacts, precise location, camera images or microphone recordings.</p>
+
+<h2>4. Ads</h2>
+<p>The app is free. In the current version ads are turned off: the ad module does not start and no data is passed to it. If ads are enabled in an update, they will look like this: one full-screen video, not on every launch but after several visits to the app, and only if there is internet. Ads are never shown while an alarm is ringing. Ads are shown by the “Yandex Ads” module. You can limit ad personalization or reset the advertising ID in your phone’s settings (the advertising or privacy section; the name depends on the Android version and manufacturer).</p>
+
+<h2>5. Backups</h2>
+<p>The “Save copy” button creates a file (.zip archive) with your alarms, timers, settings and the sounds, photos and videos you added, and opens a system window where you choose where to put it (phone storage, Google Drive, etc.). The app does not send the file anywhere itself. The reminder to make a copy arrives as a notification on the phone itself and is not sent anywhere either. In addition, Android may automatically back up app data to your Google account if this is enabled in the phone’s settings. This is done by the system; the developer has no access to such a copy.</p>
+
+<h2>6. Why permissions are needed</h2>
+<p>All permissions and their state are visible in the app itself: “Settings → App permissions”. The app turns nothing on by itself and does not ask again after you refuse; each permission can be turned on and off in the phone’s system settings.</p>
+<ul>
+<li><b>Notifications:</b> showing the ring with the “Stop” and “Snooze” buttons and, if you wish, the time and weather in the notification shade.</li>
+<li><b>Exact alarms, start after reboot, background work, vibration, “keep awake” during the ring:</b> so that the alarm goes off on time and keeps ringing until you stop it.</li>
+<li><b>Screen on a locked phone and “Display over other apps”:</b> so that the alarm window opens when you are on the home screen or in another app. The app asks for this once; you can turn it on later in “Settings → App permissions”.</li>
+<li><b>Background work on Xiaomi, Huawei, Samsung and other phones:</b> the “No battery restrictions” and “Autostart and background” rows in “Settings → App permissions” only open the phone’s system screens, where you yourself allow the app to run in the background. No data is sent anywhere and no separate permission is needed.</li>
+<li><b>Internet:</b> the weather forecast and, if ads are enabled, ad display.</li>
+</ul>
+<p>Access to contacts, camera, microphone, SMS and the phone’s location is not requested.</p>
+
+<h2>7. Disclosure to third parties</h2>
+<p>Data is passed only to the services in the table above (Open-Meteo and, if ads are enabled, Yandex), to the extent needed for them to work. The developer does not sell data and does not use it for other purposes. Open-Meteo is located outside Russia, so the weather request (city name, coordinates and the device’s IP address) goes abroad. If you do not use the “Weather” section and the weather widget, this request is not sent.</p>
+
+<h2>8. Widgets and notifications</h2>
+<p>The clock and weather widgets and the notifications in the shade work on your phone. The clock widget sends no data. The weather widget uses the same Open-Meteo request as the “Weather” section. Notifications are created by the app itself and do not pass through the servers of the developer or third parties.</p>
+
+<h2>9. Legal grounds and your rights</h2>
+<p>The developer does not receive your personal data and does not collect it into a database: everything you enter stays on your phone, and you manage it yourself. Data is passed to the services in section 3 when you yourself use the weather or (if ads are enabled) view ads. You can stop this at any time: delete the city from the “Weather” section, remove the weather widget, turn off ad settings on the phone, revoke permissions in Android settings, or uninstall the app.</p>
+<p>You have the right to find out what data about you is processed, to demand that it be corrected, blocked or deleted, to withdraw consent to processing, and to file a complaint with the authority for the protection of data subjects’ rights (Roskomnadzor). To send a request to the developer, write to the email in section 1; the answer will be given within the time limits set by the legislation of the Russian Federation.</p>
+
+<h2>10. Retention and deletion of data</h2>
+<p>The app’s data is stored on your phone until you delete it or uninstall the app. Deleted alarms and prepared timers stay in the trash for 30 days and are then deleted automatically. To delete everything at once, uninstall the app or clear its data in Android settings (Apps → Standard Alarm Clock → Storage → Clear data). Backup files you saved yourself are deleted wherever you put them. Third-party services keep data under their own rules; links and names are given above. Since the developer does not have your data, there is nothing to delete on his side; for questions, write to the email in section 1.</p>
+
+<h2>11. Children</h2>
+<p>The app is not intended specifically for children, and the developer knowingly does not collect children’s data. The app requires no registration and does not ask for age.</p>
+
+<h2>12. Changes</h2>
+<p>If the app gets new features that work with data (for example, accounts, cloud sync, payments or enabling ads), this policy will be updated before they are released. The date of the last change is shown at the top of the page.</p>
+
+<h2>13. Contact</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. For questions about data and for requests under section 9, write to this email.</p>
+</div>
+<div data-l="es" data-n="Español" data-t="Política de privacidad: Standard Alarm Clock" hidden>
+<h1>Política de privacidad de la aplicación «Standard Alarm Clock»</h1>
+<p class="mut">En vigor desde el 21 de noviembre de 2026. Nombre del paquete de la aplicación: app.budilnik.my.</p>
+
+<h2>1. Quién es responsable del tratamiento de los datos</h2>
+<p>Seven Knot (en adelante, el «desarrollador»).<br>
+Contacto para consultas sobre datos: sevenknot.apps@gmail.com.</p>
+
+<h2>2. En resumen</h2>
+<p>El desarrollador no tiene ningún servidor al que la aplicación envíe tus datos. Las alarmas, los temporizadores, los nombres, los textos, las fotos, los vídeos, los sonidos y los ajustes se guardan únicamente en la memoria de tu teléfono. La aplicación no tiene registro ni cuentas. Las únicas solicitudes que salen del teléfono van a servicios de terceros: la previsión del tiempo (Open-Meteo) y, si la publicidad está activada en la aplicación, la muestra de anuncios (Yandex Ads). Se describen a continuación.</p>
+
+<h2>3. Qué datos se tratan y adónde van</h2>
+<table>
+<tr><th>Datos</th><th>Para qué</th><th>Adónde</th></tr>
+<tr><td>Alarmas, temporizadores, cronómetro, sus nombres y textos, fotos, vídeos y sonidos que elijas, lista de ciudades, ajustes, papelera</td><td>Funcionamiento de la aplicación</td><td>Solo en la memoria de la aplicación en tu teléfono. No se transmiten al desarrollador ni a terceros</td></tr>
+<tr><td>El nombre de la ciudad que añadiste en la sección «Tiempo» y sus coordenadas</td><td>Mostrar la previsión en la aplicación y en el widget del tiempo</td><td>El servicio Open-Meteo (open-meteo.com). Como cualquier servicio de internet, ve la dirección IP del dispositivo. La aplicación no solicita la ubicación del teléfono</td></tr>
+<tr><td>Solo cuando la publicidad está activada en la aplicación. Datos que recibe el módulo publicitario: identificador publicitario del dispositivo, dirección IP, información del dispositivo y de la aplicación (por ejemplo, modelo, versión de Android, idioma), información sobre las impresiones de anuncios y las acciones realizadas con ellos</td><td>Mostrar anuncios, contabilizar impresiones, protección contra el fraude</td><td>Yandex Ads (SDK publicitario de Yandex). El conjunto de datos y las normas de su tratamiento los determina Yandex: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>La aplicación no recopila tu nombre, teléfono, correo electrónico, contactos, ubicación exacta, imágenes de la cámara ni grabaciones del micrófono.</p>
+
+<h2>4. Publicidad</h2>
+<p>La aplicación es gratuita. En la versión actual la publicidad está desactivada: el módulo publicitario no se inicia y no se le transmiten datos. Si la publicidad se activa en alguna actualización, será así: un vídeo a pantalla completa, no en cada inicio sino tras varias aperturas de la aplicación, y solo si hay internet. Nunca se muestran anuncios mientras suena una alarma. Los anuncios los muestra el módulo «Yandex Ads». Puedes limitar la personalización de los anuncios o restablecer el identificador publicitario en los ajustes del teléfono (sección de publicidad o privacidad; el nombre depende de la versión de Android y del fabricante).</p>
+
+<h2>5. Copias de seguridad</h2>
+<p>El botón «Guardar copia» crea un archivo (.zip) con tus alarmas, temporizadores, ajustes y los sonidos, fotos y vídeos que añadiste, y abre una ventana del sistema donde eliges dónde guardarlo (almacenamiento del teléfono, Google Drive, etc.). La aplicación no envía el archivo a ningún sitio por sí misma. El recordatorio para hacer una copia llega como notificación en el propio teléfono y tampoco se envía a ningún sitio. Además, Android puede hacer automáticamente una copia de los datos de la aplicación en tu cuenta de Google si esto está activado en los ajustes del teléfono. Esto lo hace el sistema; el desarrollador no tiene acceso a esa copia.</p>
+
+<h2>6. Para qué se necesitan los permisos</h2>
+<p>Todos los permisos y su estado se ven en la propia aplicación: «Ajustes → Permisos de la aplicación». La aplicación no activa nada por sí sola y no vuelve a pedir un permiso después de que lo rechaces; cada permiso se puede activar y desactivar en los ajustes del sistema del teléfono.</p>
+<ul>
+<li><b>Notificaciones:</b> mostrar la alarma con los botones «Detener» y «Posponer» y, si lo deseas, la hora y el tiempo en el panel de notificaciones.</li>
+<li><b>Alarmas exactas, inicio tras reiniciar, funcionamiento en segundo plano, vibración, «mantener despierto» durante la alarma:</b> para que la alarma suene a la hora y siga sonando hasta que la detengas.</li>
+<li><b>Pantalla con el teléfono bloqueado y «Mostrar sobre otras aplicaciones»:</b> para que la ventana de la alarma se abra cuando estás en el escritorio o en otra aplicación. La aplicación lo pide una sola vez; puedes activarlo después en «Ajustes → Permisos de la aplicación».</li>
+<li><b>Funcionamiento en segundo plano en teléfonos Xiaomi, Huawei, Samsung y otros:</b> las filas «Sin restricciones de batería» e «Inicio automático y segundo plano» en «Ajustes → Permisos de la aplicación» solo abren las pantallas del sistema del teléfono, donde tú mismo permites que la aplicación funcione en segundo plano. No se envían datos a ningún sitio y no hace falta un permiso aparte.</li>
+<li><b>Internet:</b> la previsión del tiempo y, si la publicidad está activada, la muestra de anuncios.</li>
+</ul>
+<p>No se solicita acceso a los contactos, la cámara, el micrófono, los SMS ni la ubicación del teléfono.</p>
+
+<h2>7. Comunicación a terceros</h2>
+<p>Los datos se transmiten solo a los servicios de la tabla anterior (Open-Meteo y, si la publicidad está activada, Yandex) en la medida necesaria para su funcionamiento. El desarrollador no vende datos ni los usa para otros fines. Open-Meteo se encuentra fuera de Rusia, por lo que la solicitud del tiempo (nombre de la ciudad, coordenadas y dirección IP del dispositivo) sale al extranjero. Si no usas la sección «Tiempo» ni el widget del tiempo, esta solicitud no se envía.</p>
+
+<h2>8. Widgets y notificaciones</h2>
+<p>Los widgets del reloj y del tiempo y las notificaciones del panel funcionan en tu teléfono. El widget del reloj no envía datos. El widget del tiempo usa la misma solicitud a Open-Meteo que la sección «Tiempo». Las notificaciones las crea la propia aplicación y no pasan por los servidores del desarrollador ni de terceros.</p>
+
+<h2>9. Bases jurídicas y tus derechos</h2>
+<p>El desarrollador no recibe tus datos personales ni los recopila en una base de datos: todo lo que introduces permanece en tu teléfono y tú mismo lo gestionas. Los datos se transmiten a los servicios de la sección 3 cuando tú mismo usas el tiempo o (si la publicidad está activada) ves anuncios. Puedes dejar de hacerlo en cualquier momento: eliminar la ciudad de la sección «Tiempo», quitar el widget del tiempo, desactivar los ajustes de publicidad del teléfono, revocar los permisos en los ajustes de Android o desinstalar la aplicación.</p>
+<p>Tienes derecho a saber qué datos sobre ti se tratan, a exigir su rectificación, bloqueo o supresión, a retirar el consentimiento para el tratamiento y a presentar una reclamación ante la autoridad de protección de los derechos de los interesados (Roskomnadzor). Para dirigir una solicitud al desarrollador, escribe al correo de la sección 1; la respuesta se dará en los plazos establecidos por la legislación de la Federación de Rusia.</p>
+
+<h2>10. Plazo de conservación y eliminación de datos</h2>
+<p>Los datos de la aplicación se conservan en tu teléfono hasta que los elimines o desinstales la aplicación. Las alarmas eliminadas y los temporizadores preparados permanecen en la papelera 30 días y después se eliminan solos. Para eliminar todo de una vez, desinstala la aplicación o borra sus datos en los ajustes de Android (Aplicaciones → Standard Alarm Clock → Almacenamiento → Borrar datos). Los archivos de copia de seguridad que guardaste tú mismo se eliminan allí donde los pusiste. Los servicios de terceros conservan los datos según sus propias normas; los enlaces y nombres se indican arriba. Como el desarrollador no tiene tus datos, no hay nada que eliminar por su parte; para consultas, escribe al correo de la sección 1.</p>
+
+<h2>11. Menores</h2>
+<p>La aplicación no está destinada específicamente a menores y el desarrollador no recopila conscientemente datos de menores. La aplicación no requiere registro ni pide indicar la edad.</p>
+
+<h2>12. Cambios</h2>
+<p>Si la aplicación incorpora nuevas funciones que trabajen con datos (por ejemplo, cuentas, sincronización en la nube, pagos o la activación de la publicidad), esta política se actualizará antes de su lanzamiento. La fecha del último cambio figura en la parte superior de la página.</p>
+
+<h2>13. Contacto</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. Para consultas sobre datos y para las solicitudes de la sección 9, escribe a este correo.</p>
+</div>
+<div data-l="de" data-n="Deutsch" data-t="Datenschutzerklärung: Standard Alarm Clock" hidden>
+<h1>Datenschutzerklärung der App „Standard Alarm Clock“</h1>
+<p class="mut">Gültig ab dem 21. November 2026. Paketname der App: app.budilnik.my.</p>
+
+<h2>1. Wer für die Datenverarbeitung verantwortlich ist</h2>
+<p>Seven Knot (nachfolgend der „Entwickler“).<br>
+Kontakt bei Datenfragen: sevenknot.apps@gmail.com.</p>
+
+<h2>2. Kurzfassung</h2>
+<p>Der Entwickler betreibt keinen Server, an den die App Ihre Daten senden würde. Wecker, Timer, Namen, Texte, Fotos, Videos, Töne und Einstellungen werden ausschließlich im Speicher Ihres Telefons abgelegt. Die App hat keine Registrierung und keine Konten. Nach außen gehen nur Anfragen an Dienste Dritter: die Wettervorhersage (Open-Meteo) und, falls in der App Werbung aktiviert ist, die Anzeige von Werbung (Yandex Ads). Sie werden unten beschrieben.</p>
+
+<h2>3. Welche Daten wohin gelangen</h2>
+<table>
+<tr><th>Daten</th><th>Wozu</th><th>Wohin</th></tr>
+<tr><td>Wecker, Timer, Stoppuhr, deren Namen und Texte, von Ihnen gewählte Fotos, Videos und Töne, Städteliste, Einstellungen, Papierkorb</td><td>Betrieb der App</td><td>Nur in den Speicher der App auf Ihrem Telefon. Werden weder an den Entwickler noch an Dritte übermittelt</td></tr>
+<tr><td>Der Name der Stadt, die Sie im Bereich „Wetter“ hinzugefügt haben, und ihre Koordinaten</td><td>Anzeige der Vorhersage in der App und im Wetter-Widget</td><td>Der Dienst Open-Meteo (open-meteo.com). Wie jeder Internetdienst sieht er die IP-Adresse des Geräts. Der Standort des Telefons wird von der App nicht abgefragt</td></tr>
+<tr><td>Nur wenn in der App Werbung aktiviert ist. Daten, die das Werbemodul erhält: Werbe-ID des Geräts, IP-Adresse, Angaben zu Gerät und App (z. B. Modell, Android-Version, Sprache), Angaben zu Werbeeinblendungen und Aktionen damit</td><td>Anzeige von Werbung, Zählung der Einblendungen, Schutz vor Betrug</td><td>Yandex Ads (Werbe-SDK von Yandex). Umfang der Daten und Verarbeitungsregeln legt Yandex fest: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>Die App erfasst weder Ihren Namen, Ihre Telefonnummer, E-Mail-Adresse, Kontakte, Ihren genauen Standort, Kamerabilder noch Mikrofonaufnahmen.</p>
+
+<h2>4. Werbung</h2>
+<p>Die App ist kostenlos. In der aktuellen Version ist die Werbung abgeschaltet: Das Werbemodul wird nicht gestartet und es werden ihm keine Daten übergeben. Falls Werbung in einem Update aktiviert wird, sieht sie so aus: ein Vollbildvideo, nicht bei jedem Start, sondern nach mehreren Aufrufen der App, und nur bei Internetverbindung. Während ein Wecker klingelt, wird nie Werbung gezeigt. Die Werbung zeigt das Modul „Yandex Ads“. Sie können die Personalisierung der Werbung einschränken oder die Werbe-ID in den Telefoneinstellungen zurücksetzen (Bereich Werbung oder Datenschutz; die Bezeichnung hängt von Android-Version und Hersteller ab).</p>
+
+<h2>5. Sicherungen</h2>
+<p>Die Schaltfläche „Kopie speichern“ erstellt eine Datei (.zip-Archiv) mit Ihren Weckern, Timern, Einstellungen sowie den hinzugefügten Tönen, Fotos und Videos und öffnet ein Systemfenster, in dem Sie den Speicherort wählen (Telefonspeicher, Google Drive usw.). Die App sendet die Datei nicht selbst irgendwohin. Die Erinnerung an eine Sicherung erscheint als Benachrichtigung auf dem Telefon selbst und wird ebenfalls nirgendwohin gesendet. Zusätzlich kann Android die App-Daten automatisch in Ihrem Google-Konto sichern, wenn dies in den Telefoneinstellungen aktiviert ist. Das erledigt das System; der Entwickler hat auf eine solche Kopie keinen Zugriff.</p>
+
+<h2>6. Wozu Berechtigungen benötigt werden</h2>
+<p>Alle Berechtigungen und ihr Status sind in der App selbst sichtbar: „Einstellungen → App-Berechtigungen“. Die App schaltet nichts von selbst ein und fragt nach Ihrer Ablehnung nicht erneut; jede Berechtigung lässt sich in den Systemeinstellungen des Telefons ein- und ausschalten.</p>
+<ul>
+<li><b>Benachrichtigungen:</b> Anzeige des Weckers mit den Schaltflächen „Stopp“ und „Schlummern“ und, wenn Sie möchten, von Uhrzeit und Wetter im Benachrichtigungsbereich.</li>
+<li><b>Exakte Wecker, Start nach Neustart, Hintergrundbetrieb, Vibration, „Wachhalten“ beim Klingeln:</b> damit der Wecker pünktlich losgeht und klingelt, bis Sie ihn stoppen.</li>
+<li><b>Bildschirm bei gesperrtem Telefon und „Über anderen Apps anzeigen“:</b> damit sich das Weckerfenster öffnet, wenn Sie auf dem Startbildschirm oder in einer anderen App sind. Die App fragt dies einmal ab; später können Sie es unter „Einstellungen → App-Berechtigungen“ aktivieren.</li>
+<li><b>Hintergrundbetrieb bei Xiaomi, Huawei, Samsung und anderen Telefonen:</b> Die Zeilen „Keine Akkubeschränkungen“ und „Autostart und Hintergrund“ unter „Einstellungen → App-Berechtigungen“ öffnen nur die Systemseiten des Telefons, auf denen Sie der App selbst den Hintergrundbetrieb erlauben. Dabei werden keine Daten übermittelt, eine gesonderte Berechtigung ist nicht nötig.</li>
+<li><b>Internet:</b> Wettervorhersage und, falls Werbung aktiviert ist, Anzeige von Werbung.</li>
+</ul>
+<p>Zugriff auf Kontakte, Kamera, Mikrofon, SMS und den Standort des Telefons wird nicht angefordert.</p>
+
+<h2>7. Weitergabe an Dritte</h2>
+<p>Daten werden nur an die Dienste aus der Tabelle oben übermittelt (Open-Meteo und, bei aktivierter Werbung, Yandex), und zwar in dem Umfang, der für deren Betrieb nötig ist. Der Entwickler verkauft keine Daten und nutzt sie nicht für andere Zwecke. Open-Meteo befindet sich außerhalb Russlands, daher geht die Wetteranfrage (Stadtname, Koordinaten und IP-Adresse des Geräts) ins Ausland. Wenn Sie den Bereich „Wetter“ und das Wetter-Widget nicht nutzen, wird diese Anfrage nicht gesendet.</p>
+
+<h2>8. Widgets und Benachrichtigungen</h2>
+<p>Die Uhr- und Wetter-Widgets und die Benachrichtigungen im Benachrichtigungsbereich arbeiten auf Ihrem Telefon. Das Uhr-Widget sendet keine Daten. Das Wetter-Widget nutzt dieselbe Anfrage an Open-Meteo wie der Bereich „Wetter“. Benachrichtigungen erzeugt die App selbst; sie laufen nicht über Server des Entwicklers oder Dritter.</p>
+
+<h2>9. Rechtsgrundlagen und Ihre Rechte</h2>
+<p>Der Entwickler erhält Ihre personenbezogenen Daten nicht und sammelt sie nicht in einer Datenbank: Alles, was Sie eingeben, bleibt auf Ihrem Telefon, und Sie verfügen selbst darüber. An die Dienste aus Abschnitt 3 werden Daten übermittelt, wenn Sie selbst das Wetter nutzen oder (bei aktivierter Werbung) Werbung ansehen. Sie können dies jederzeit beenden: die Stadt aus dem Bereich „Wetter“ löschen, das Wetter-Widget entfernen, die Werbeeinstellungen am Telefon ausschalten, Berechtigungen in den Android-Einstellungen widerrufen oder die App deinstallieren.</p>
+<p>Sie haben das Recht zu erfahren, welche Daten über Sie verarbeitet werden, deren Berichtigung, Sperrung oder Löschung zu verlangen, die Einwilligung in die Verarbeitung zu widerrufen und sich bei der Behörde zum Schutz der Rechte betroffener Personen (Roskomnadzor) zu beschweren. Für eine Anfrage an den Entwickler schreiben Sie an die E-Mail-Adresse aus Abschnitt 1; die Antwort erfolgt innerhalb der Fristen, die das Recht der Russischen Föderation vorsieht.</p>
+
+<h2>10. Speicherdauer und Löschung der Daten</h2>
+<p>Die Daten der App werden auf Ihrem Telefon gespeichert, bis Sie sie löschen oder die App deinstallieren. Gelöschte Wecker und vorbereitete Timer liegen 30 Tage im Papierkorb und werden dann automatisch gelöscht. Um alles auf einmal zu löschen, deinstallieren Sie die App oder löschen Sie ihre Daten in den Android-Einstellungen (Apps → Standard Alarm Clock → Speicher → Daten löschen). Von Ihnen selbst gespeicherte Sicherungsdateien werden dort gelöscht, wo Sie sie abgelegt haben. Dienste Dritter speichern Daten nach ihren eigenen Regeln; Links und Namen stehen oben. Da der Entwickler Ihre Daten nicht hat, gibt es auf seiner Seite nichts zu löschen; bei Fragen schreiben Sie an die E-Mail-Adresse aus Abschnitt 1.</p>
+
+<h2>11. Kinder</h2>
+<p>Die App richtet sich nicht speziell an Kinder, und der Entwickler erhebt wissentlich keine Daten von Kindern. Die App erfordert keine Registrierung und fragt nicht nach dem Alter.</p>
+
+<h2>12. Änderungen</h2>
+<p>Erhält die App neue Funktionen, die mit Daten arbeiten (z. B. Konten, Cloud-Synchronisierung, Zahlungen oder die Aktivierung von Werbung), wird diese Erklärung vor deren Veröffentlichung aktualisiert. Das Datum der letzten Änderung steht oben auf der Seite.</p>
+
+<h2>13. Kontakt</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. Bei Fragen zu Daten und für Anfragen nach Abschnitt 9 schreiben Sie an diese E-Mail-Adresse.</p>
+</div>
+<div data-l="fr" data-n="Français" data-t="Politique de confidentialité : Standard Alarm Clock" hidden>
+<h1>Politique de confidentialité de l’application « Standard Alarm Clock »</h1>
+<p class="mut">En vigueur à partir du 21 novembre 2026. Nom du paquet de l’application : app.budilnik.my.</p>
+
+<h2>1. Qui est responsable du traitement des données</h2>
+<p>Seven Knot (ci-après le « développeur »).<br>
+Contact pour les questions sur les données : sevenknot.apps@gmail.com.</p>
+
+<h2>2. En bref</h2>
+<p>Le développeur ne dispose d’aucun serveur auquel l’application enverrait vos données. Les réveils, minuteurs, noms, textes, photos, vidéos, sons et réglages sont stockés uniquement dans la mémoire de votre téléphone. L’application n’a ni inscription ni compte. Seules des requêtes vers des services tiers sortent du téléphone : la prévision météo (Open-Meteo) et, si la publicité est activée dans l’application, l’affichage de publicités (Yandex Ads). Ils sont décrits ci-dessous.</p>
+
+<h2>3. Quelles données vont où</h2>
+<table>
+<tr><th>Données</th><th>Pourquoi</th><th>Où</th></tr>
+<tr><td>Réveils, minuteurs, chronomètre, leurs noms et textes, photos, vidéos et sons que vous avez choisis, liste de villes, réglages, corbeille</td><td>Fonctionnement de l’application</td><td>Uniquement dans la mémoire de l’application sur votre téléphone. Non transmises au développeur ni à des tiers</td></tr>
+<tr><td>Le nom de la ville que vous avez ajoutée dans la section « Météo » et ses coordonnées</td><td>Affichage de la prévision dans l’application et dans le widget météo</td><td>Le service Open-Meteo (open-meteo.com). Comme tout service internet, il voit l’adresse IP de l’appareil. L’application ne demande pas la localisation du téléphone</td></tr>
+<tr><td>Uniquement lorsque la publicité est activée dans l’application. Données reçues par le module publicitaire : identifiant publicitaire de l’appareil, adresse IP, informations sur l’appareil et l’application (par exemple modèle, version d’Android, langue), informations sur les affichages de publicités et les actions effectuées</td><td>Affichage de publicités, comptage des affichages, protection contre la fraude</td><td>Yandex Ads (SDK publicitaire de Yandex). L’étendue des données et les règles de traitement sont fixées par Yandex : <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>L’application ne collecte ni votre nom, ni votre numéro de téléphone, ni votre e-mail, ni vos contacts, ni votre localisation précise, ni d’images de la caméra, ni d’enregistrements du microphone.</p>
+
+<h2>4. Publicité</h2>
+<p>L’application est gratuite. Dans la version actuelle, la publicité est désactivée : le module publicitaire ne démarre pas et aucune donnée ne lui est transmise. Si la publicité est activée dans une mise à jour, elle se présentera ainsi : une vidéo plein écran, pas à chaque lancement mais après plusieurs ouvertures de l’application, et seulement si une connexion internet est disponible. Aucune publicité n’est jamais affichée pendant qu’un réveil sonne. Les publicités sont affichées par le module « Yandex Ads ». Vous pouvez limiter la personnalisation des publicités ou réinitialiser l’identifiant publicitaire dans les réglages du téléphone (rubrique publicité ou confidentialité ; le nom dépend de la version d’Android et du fabricant).</p>
+
+<h2>5. Sauvegardes</h2>
+<p>Le bouton « Enregistrer une copie » crée un fichier (archive .zip) contenant vos réveils, minuteurs, réglages ainsi que les sons, photos et vidéos ajoutés, et ouvre une fenêtre système où vous choisissez l’emplacement (stockage du téléphone, Google Drive, etc.). L’application n’envoie pas elle-même le fichier ailleurs. Le rappel de faire une copie arrive sous forme de notification sur le téléphone lui-même et n’est envoyé nulle part non plus. En outre, Android peut sauvegarder automatiquement les données de l’application dans votre compte Google si cela est activé dans les réglages du téléphone. C’est le système qui le fait ; le développeur n’a pas accès à une telle copie.</p>
+
+<h2>6. À quoi servent les autorisations</h2>
+<p>Toutes les autorisations et leur état sont visibles dans l’application : « Réglages → Autorisations de l’application ». L’application n’active rien d’elle-même et ne redemande pas après un refus ; chaque autorisation peut être activée et désactivée dans les réglages système du téléphone.</p>
+<ul>
+<li><b>Notifications :</b> affichage de la sonnerie avec les boutons « Arrêter » et « Reporter » et, si vous le souhaitez, de l’heure et de la météo dans le volet de notifications.</li>
+<li><b>Réveils exacts, démarrage après redémarrage, fonctionnement en arrière-plan, vibration, « maintenir éveillé » pendant la sonnerie :</b> pour que le réveil se déclenche à l’heure et sonne jusqu’à ce que vous l’arrêtiez.</li>
+<li><b>Écran sur téléphone verrouillé et « Affichage par-dessus les autres applications » :</b> pour que la fenêtre du réveil s’ouvre lorsque vous êtes sur l’écran d’accueil ou dans une autre application. L’application le demande une seule fois ; vous pouvez l’activer plus tard dans « Réglages → Autorisations de l’application ».</li>
+<li><b>Fonctionnement en arrière-plan sur les téléphones Xiaomi, Huawei, Samsung et autres :</b> les lignes « Sans restriction de batterie » et « Démarrage automatique et arrière-plan » dans « Réglages → Autorisations de l’application » ouvrent seulement les écrans système du téléphone, où vous autorisez vous-même l’application à fonctionner en arrière-plan. Aucune donnée n’est envoyée et aucune autorisation distincte n’est nécessaire.</li>
+<li><b>Internet :</b> prévision météo et, si la publicité est activée, affichage de publicités.</li>
+</ul>
+<p>L’accès aux contacts, à la caméra, au microphone, aux SMS et à la localisation du téléphone n’est pas demandé.</p>
+
+<h2>7. Communication à des tiers</h2>
+<p>Les données ne sont transmises qu’aux services du tableau ci-dessus (Open-Meteo et, si la publicité est activée, Yandex), dans la mesure nécessaire à leur fonctionnement. Le développeur ne vend pas les données et ne les utilise pas à d’autres fins. Open-Meteo se trouve en dehors de la Russie ; la requête météo (nom de la ville, coordonnées et adresse IP de l’appareil) part donc à l’étranger. Si vous n’utilisez ni la section « Météo » ni le widget météo, cette requête n’est pas envoyée.</p>
+
+<h2>8. Widgets et notifications</h2>
+<p>Les widgets horloge et météo et les notifications du volet fonctionnent sur votre téléphone. Le widget horloge n’envoie aucune donnée. Le widget météo utilise la même requête vers Open-Meteo que la section « Météo ». Les notifications sont créées par l’application elle-même et ne transitent pas par les serveurs du développeur ou de tiers.</p>
+
+<h2>9. Bases juridiques et vos droits</h2>
+<p>Le développeur ne reçoit pas vos données personnelles et ne les rassemble pas dans une base : tout ce que vous saisissez reste sur votre téléphone et vous en disposez vous-même. Les données sont transmises aux services de la section 3 lorsque vous utilisez vous-même la météo ou (si la publicité est activée) regardez des publicités. Vous pouvez y mettre fin à tout moment : supprimer la ville de la section « Météo », retirer le widget météo, désactiver les réglages publicitaires du téléphone, retirer les autorisations dans les réglages d’Android ou désinstaller l’application.</p>
+<p>Vous avez le droit de savoir quelles données vous concernant sont traitées, d’exiger leur rectification, leur blocage ou leur suppression, de retirer votre consentement au traitement et de déposer une plainte auprès de l’autorité chargée de la protection des droits des personnes concernées (Roskomnadzor). Pour adresser une demande au développeur, écrivez à l’adresse e-mail de la section 1 ; la réponse sera donnée dans les délais fixés par la législation de la Fédération de Russie.</p>
+
+<h2>10. Durée de conservation et suppression des données</h2>
+<p>Les données de l’application sont conservées sur votre téléphone jusqu’à ce que vous les supprimiez ou désinstalliez l’application. Les réveils supprimés et les minuteurs préparés restent 30 jours dans la corbeille, puis sont supprimés automatiquement. Pour tout supprimer d’un coup, désinstallez l’application ou effacez ses données dans les réglages d’Android (Applications → Standard Alarm Clock → Stockage → Effacer les données). Les fichiers de sauvegarde que vous avez enregistrés vous-même sont supprimés là où vous les avez placés. Les services tiers conservent les données selon leurs propres règles ; les liens et noms sont indiqués ci-dessus. Comme le développeur n’a pas vos données, il n’y a rien à supprimer de son côté ; pour toute question, écrivez à l’adresse e-mail de la section 1.</p>
+
+<h2>11. Enfants</h2>
+<p>L’application n’est pas spécialement destinée aux enfants et le développeur ne collecte pas sciemment de données d’enfants. L’application n’exige pas d’inscription et ne demande pas l’âge.</p>
+
+<h2>12. Modifications</h2>
+<p>Si l’application reçoit de nouvelles fonctions qui traitent des données (par exemple comptes, synchronisation dans le cloud, paiements ou activation de la publicité), cette politique sera mise à jour avant leur sortie. La date de la dernière modification figure en haut de la page.</p>
+
+<h2>13. Contact</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. Pour les questions sur les données et pour les demandes relevant de la section 9, écrivez à cette adresse e-mail.</p>
+</div>
+<div data-l="uk" data-n="Українська" data-t="Політика конфіденційності: Standard Alarm Clock" hidden>
+<h1>Політика конфіденційності застосунку «Standard Alarm Clock»</h1>
+<p class="mut">Діє з 21 листопада 2026 року. Назва пакета застосунку: app.budilnik.my.</p>
+
+<h2>1. Хто відповідає за обробку даних</h2>
+<p>Seven Knot (далі «розробник»).<br>
+Контакт із питань даних: sevenknot.apps@gmail.com.</p>
+
+<h2>2. Коротко</h2>
+<p>У розробника немає сервера, на який застосунок надсилав би ваші дані. Будильники, таймери, назви, тексти, фото, відео, звуки та налаштування зберігаються лише в пам’яті вашого телефона. У застосунку немає реєстрації й облікових записів. Назовні йдуть лише запити до сторонніх сервісів: прогноз погоди (Open-Meteo) і, якщо в застосунку ввімкнено рекламу, показ реклами (Яндекс Реклама). Вони описані нижче.</p>
+
+<h2>3. Які дані і куди потрапляють</h2>
+<table>
+<tr><th>Дані</th><th>Навіщо</th><th>Куди</th></tr>
+<tr><td>Будильники, таймери, секундомір, їхні назви й тексти, обрані вами фото, відео та звуки, список міст, налаштування, кошик</td><td>Робота застосунку</td><td>Лише в пам’ять застосунку на вашому телефоні. Розробнику й третім особам не передаються</td></tr>
+<tr><td>Назва міста, яке ви додали в розділ «Погода», та його координати</td><td>Показ прогнозу в застосунку та у віджеті погоди</td><td>Сервіс Open-Meteo (open-meteo.com). Як і будь-який інтернет-сервіс, він бачить IP-адресу пристрою. Геолокацію телефона застосунок не запитує</td></tr>
+<tr><td>Лише коли в застосунку ввімкнено рекламу. Дані, які отримує рекламний модуль: рекламний ідентифікатор пристрою, IP-адреса, відомості про пристрій і застосунок (наприклад, модель, версія Android, мова), відомості про покази реклами та дії з нею</td><td>Показ реклами, облік показів, захист від шахрайських дій</td><td>Яндекс Реклама (рекламний SDK Яндекса). Склад даних і правила їх обробки визначає Яндекс: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>Застосунок не збирає ваше ім’я, телефон, електронну пошту, контакти, точне місцезнаходження, зображення з камери, запис із мікрофона.</p>
+
+<h2>4. Реклама</h2>
+<p>Застосунок безкоштовний. У поточній версії реклама вимкнена: рекламний модуль не запускається, і дані йому не передаються. Якщо рекламу буде ввімкнено в одному з оновлень, вона виглядатиме так: один повноекранний ролик, не при кожному запуску, а після кількох заходів у застосунок, і лише за наявності інтернету. Під час дзвінка будильника реклама не показується. Рекламу показує модуль «Яндекс Реклама». Ви можете обмежити персоналізацію реклами або скинути рекламний ідентифікатор у налаштуваннях телефона (розділ рекламних налаштувань або конфіденційності; назва залежить від версії Android і виробника).</p>
+
+<h2>5. Резервні копії</h2>
+<p>Кнопка «Зберегти копію» створює файл (архів .zip) з вашими будильниками, таймерами, налаштуваннями та доданими звуками, фото й відео і відкриває системне вікно, де ви обираєте, куди його покласти (пам’ять телефона, Google Drive тощо). Сам застосунок файл нікуди не надсилає. Нагадування зробити копію приходить як сповіщення на самому телефоні й також нікуди не надсилається. Крім того, Android може автоматично робити резервну копію даних застосунку у ваш обліковий запис Google, якщо це ввімкнено в налаштуваннях телефона. Це робить система; у розробника немає доступу до такої копії.</p>
+
+<h2>6. Навіщо потрібні дозволи</h2>
+<p>Усі дозволи та їхній стан видно в самому застосунку: «Налаштування → Дозволи застосунку». Застосунок сам нічого не вмикає і після вашої відмови повторно не просить; кожен дозвіл можна ввімкнути й вимкнути в системних налаштуваннях телефона.</p>
+<ul>
+<li><b>Сповіщення:</b> показ дзвінка з кнопками «Стоп» і «Відкласти» та, за вашим бажанням, часу й погоди в шторці.</li>
+<li><b>Точні будильники, запуск після перезавантаження, робота у фоні, вібрація, «не засинати» під час дзвінка:</b> щоб будильник спрацював вчасно й дзвенів, доки ви його не зупините.</li>
+<li><b>Екран на заблокованому телефоні та «Поверх інших застосунків»:</b> щоб вікно будильника відкривалося, коли ви на робочому столі або в іншому застосунку. Застосунок просить це один раз; увімкнути пізніше можна в «Налаштування → Дозволи застосунку».</li>
+<li><b>Робота у фоні на телефонах Xiaomi, Huawei, Samsung та інших:</b> рядки «Без обмежень батареї» та «Автозапуск і фон» у «Налаштування → Дозволи застосунку» лише відкривають системні екрани телефона, де ви самі дозволяєте застосунку працювати у фоні. Дані при цьому нікуди не передаються, окремий дозвіл не потрібен.</li>
+<li><b>Інтернет:</b> прогноз погоди та, якщо ввімкнено рекламу, показ реклами.</li>
+</ul>
+<p>Доступ до контактів, камери, мікрофона, SMS і місцезнаходження телефона не запитується.</p>
+
+<h2>7. Передача третім особам</h2>
+<p>Дані передаються лише сервісам із таблиці вище (Open-Meteo і, за ввімкненої реклами, Яндекс) в обсязі, потрібному для їхньої роботи. Розробник не продає дані й не використовує їх в інших цілях. Сервіс Open-Meteo перебуває за межами Росії, тому запит погоди (назва міста, координати та IP-адреса пристрою) йде за кордон. Якщо ви не користуєтеся розділом «Погода» та віджетом погоди, цей запит не надсилається.</p>
+
+<h2>8. Віджети та сповіщення</h2>
+<p>Віджети годинника й погоди та сповіщення в шторці працюють на вашому телефоні. Віджет годинника даних не надсилає. Віджет погоди використовує той самий запит до Open-Meteo, що й розділ «Погода». Сповіщення створює сам застосунок, через сервери розробника чи третіх осіб вони не проходять.</p>
+
+<h2>9. Правові підстави та ваші права</h2>
+<p>Розробник не отримує ваші персональні дані й не збирає їх до бази: усе, що ви вводите, залишається на вашому телефоні, і ви самі цим розпоряджаєтеся. Сервісам із розділу 3 дані передаються, коли ви самі користуєтеся погодою або (за ввімкненої реклами) переглядаєте рекламу. Ви можете будь-коли припинити це: видалити місто з розділу «Погода», прибрати віджет погоди, вимкнути рекламні налаштування на телефоні, відкликати дозволи в налаштуваннях Android або видалити застосунок.</p>
+<p>Ви маєте право дізнатися, які дані про вас обробляються, вимагати їх уточнення, блокування чи видалення, відкликати згоду на обробку та звернутися зі скаргою до уповноваженого органу із захисту прав суб’єктів персональних даних (Роскомнагляд). Щоб надіслати запит розробнику, напишіть на пошту з розділу 1; відповідь буде дано у строки, встановлені законодавством Російської Федерації.</p>
+
+<h2>10. Строк зберігання та видалення даних</h2>
+<p>Дані застосунку зберігаються на вашому телефоні, доки ви їх не видалите або не видалите застосунок. Видалені будильники й заготовлені таймери лежать у кошику 30 днів, потім видаляються самі. Щоб видалити все одразу, видаліть застосунок або очистьте його дані в налаштуваннях Android (Застосунки → Standard Alarm Clock → Пам’ять → Очистити дані). Файли резервних копій, які ви зберегли самі, видаляються там, куди ви їх поклали. Сторонні сервіси зберігають дані за своїми правилами, посилання й назви вказано вище. Оскільки у розробника немає ваших даних, видаляти з його боку нічого; із запитаннями звертайтеся на пошту з розділу 1.</p>
+
+<h2>11. Діти</h2>
+<p>Застосунок не призначений спеціально для дітей, і розробник свідомо не збирає дані дітей. Застосунок не вимагає реєстрації й не просить вказувати вік.</p>
+
+<h2>12. Зміни</h2>
+<p>Якщо в застосунку з’являться нові функції, які працюють із даними (наприклад, облікові записи, хмарна синхронізація, платежі або ввімкнення реклами), ця політика буде оновлена до їх виходу. Дату останньої зміни вказано вгорі сторінки.</p>
+
+<h2>13. Зв’язок</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. З питань про дані та за запитами з розділу 9 пишіть на цю пошту.</p>
+</div>
+<div data-l="zh" data-n="中文" data-t="隐私政策：Standard Alarm Clock" hidden>
+<h1>“Standard Alarm Clock”应用隐私政策</h1>
+<p class="mut">自 2026 年 11 月 21 日起生效。应用包名：app.budilnik.my。</p>
+
+<h2>1. 谁负责数据处理</h2>
+<p>Seven Knot（以下简称“开发者”）。<br>
+数据相关问题联系邮箱：sevenknot.apps@gmail.com。</p>
+
+<h2>2. 简要说明</h2>
+<p>开发者没有任何服务器供应用发送您的数据。闹钟、计时器、名称、文字、照片、视频、声音和设置仅保存在您手机的存储中。应用没有注册和账号。向外发出的仅有对第三方服务的请求：天气预报（Open-Meteo），以及在应用中开启广告时的广告展示（Yandex 广告）。详见下文。</p>
+
+<h2>3. 哪些数据会去向何处</h2>
+<table>
+<tr><th>数据</th><th>用途</th><th>去向</th></tr>
+<tr><td>闹钟、计时器、秒表、它们的名称和文字、您选择的照片、视频和声音、城市列表、设置、回收站</td><td>应用运行</td><td>仅存于您手机上的应用存储中。不会传给开发者或第三方</td></tr>
+<tr><td>您在“天气”栏目中添加的城市名称及其坐标</td><td>在应用和天气小组件中显示预报</td><td>Open-Meteo 服务（open-meteo.com）。与任何互联网服务一样，它能看到设备的 IP 地址。应用不会请求手机的定位</td></tr>
+<tr><td>仅在应用中开启广告时。广告模块获取的数据：设备广告标识符、IP 地址、设备和应用信息（例如型号、Android 版本、语言）、广告展示及相关操作的信息</td><td>展示广告、统计展示次数、防范欺诈行为</td><td>Yandex 广告（Yandex 广告 SDK）。数据范围和处理规则由 Yandex 决定：<span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>应用不会收集您的姓名、电话、电子邮箱、通讯录、精确位置、摄像头图像和麦克风录音。</p>
+
+<h2>4. 广告</h2>
+<p>应用免费。当前版本中广告已关闭：广告模块不会启动，也不会向其传输数据。如果在某次更新中开启广告，其形式为：一段全屏视频，不是每次启动都出现，而是在打开应用若干次后出现，且仅在有网络时出现。闹钟响铃期间绝不显示广告。广告由“Yandex 广告”模块展示。您可以在手机设置中限制广告个性化或重置广告标识符（广告或隐私设置栏目；名称因 Android 版本和厂商而异）。</p>
+
+<h2>5. 备份</h2>
+<p>“保存副本”按钮会创建一个文件（.zip 压缩包），包含您的闹钟、计时器、设置以及您添加的声音、照片和视频，并打开系统窗口，由您选择存放位置（手机存储、Google Drive 等）。应用本身不会把该文件发送到任何地方。提醒您备份的通知出现在手机本机上，同样不会发送到任何地方。此外，如果在手机设置中开启，Android 可能会自动将应用数据备份到您的 Google 账号。这由系统完成；开发者无法访问此类副本。</p>
+
+<h2>6. 为什么需要权限</h2>
+<p>所有权限及其状态都可在应用内查看：“设置 → 应用权限”。应用不会自行开启任何权限，被您拒绝后也不会再次请求；每项权限都可在手机系统设置中开启和关闭。</p>
+<ul>
+<li><b>通知：</b>显示带有“停止”和“稍后提醒”按钮的响铃界面，并按您的意愿在通知栏显示时间和天气。</li>
+<li><b>精确闹钟、重启后启动、后台运行、振动、响铃时“保持唤醒”：</b>确保闹钟准时响起，并持续响铃直到您停止。</li>
+<li><b>锁屏时显示屏幕和“显示在其他应用上层”：</b>确保您在桌面或其他应用中时，闹钟窗口也能打开。应用只请求一次；之后可在“设置 → 应用权限”中开启。</li>
+<li><b>小米、华为、三星等手机上的后台运行：</b>“设置 → 应用权限”中的“无电池限制”和“自启动与后台”两行只会打开手机的系统页面，由您自己允许应用在后台运行。此过程不会传输任何数据，也不需要单独的权限。</li>
+<li><b>互联网：</b>天气预报，以及在开启广告时的广告展示。</li>
+</ul>
+<p>不会请求访问通讯录、摄像头、麦克风、短信和手机定位。</p>
+
+<h2>7. 向第三方提供</h2>
+<p>数据仅在其运行所需范围内传给上表中的服务（Open-Meteo，以及开启广告时的 Yandex）。开发者不出售数据，也不将其用于其他目的。Open-Meteo 位于俄罗斯境外，因此天气请求（城市名称、坐标和设备的 IP 地址）会发往境外。如果您不使用“天气”栏目和天气小组件，则不会发送该请求。</p>
+
+<h2>8. 小组件和通知</h2>
+<p>时钟和天气小组件以及通知栏中的通知都在您的手机上运行。时钟小组件不发送数据。天气小组件使用与“天气”栏目相同的 Open-Meteo 请求。通知由应用自身创建，不经过开发者或第三方的服务器。</p>
+
+<h2>9. 法律依据和您的权利</h2>
+<p>开发者不会获取您的个人数据，也不会将其汇集到数据库：您输入的一切都留在您的手机上，由您自行支配。当您自己使用天气功能或（开启广告时）观看广告时，数据才会传给第 3 节中的服务。您可以随时停止：从“天气”栏目中删除城市、移除天气小组件、关闭手机上的广告设置、在 Android 设置中撤销权限或卸载应用。</p>
+<p>您有权了解正在处理哪些关于您的数据，要求更正、封存或删除这些数据，撤回对处理的同意，并向个人数据主体权利保护主管机关（俄罗斯联邦通信监督局，Roskomnadzor）投诉。如需向开发者提出请求，请写信至第 1 节中的邮箱；将在俄罗斯联邦法律规定的期限内答复。</p>
+
+<h2>10. 保存期限和数据删除</h2>
+<p>应用数据保存在您的手机上，直到您将其删除或卸载应用。已删除的闹钟和预设的计时器在回收站中保留 30 天，之后自动删除。如需一次性删除全部数据，请卸载应用，或在 Android 设置中清除其数据（应用 → Standard Alarm Clock → 存储 → 清除数据）。您自己保存的备份文件会在您存放的位置被删除。第三方服务按其自身规则保存数据，链接和名称见上文。由于开发者没有您的数据，开发者一侧无需删除；如有疑问，请写信至第 1 节中的邮箱。</p>
+
+<h2>11. 儿童</h2>
+<p>应用并非专为儿童设计，开发者不会有意收集儿童数据。应用无需注册，也不要求填写年龄。</p>
+
+<h2>12. 变更</h2>
+<p>如果应用新增了处理数据的功能（例如账号、云同步、支付或开启广告），本政策将在这些功能发布前更新。最近一次修改的日期显示在页面顶部。</p>
+
+<h2>13. 联系方式</h2>
+<p>Seven Knot，sevenknot.apps@gmail.com。有关数据的问题以及第 9 节所述的请求，请写信至此邮箱。</p>
+</div>
+<div data-l="pt" data-n="Português" data-t="Política de privacidade: Standard Alarm Clock" hidden>
+<h1>Política de privacidade do aplicativo «Standard Alarm Clock»</h1>
+<p class="mut">Em vigor desde 21 de novembro de 2026. Nome do pacote do aplicativo: app.budilnik.my.</p>
+
+<h2>1. Quem é responsável pelo tratamento dos dados</h2>
+<p>Seven Knot (a seguir, o «desenvolvedor»).<br>
+Contato para questões sobre dados: sevenknot.apps@gmail.com.</p>
+
+<h2>2. Em resumo</h2>
+<p>O desenvolvedor não tem nenhum servidor para o qual o aplicativo envie os seus dados. Alarmes, temporizadores, nomes, textos, fotos, vídeos, sons e configurações ficam guardados apenas na memória do seu telefone. O aplicativo não tem cadastro nem contas. Saem do telefone apenas solicitações a serviços de terceiros: a previsão do tempo (Open-Meteo) e, se a publicidade estiver ativada no aplicativo, a exibição de anúncios (Yandex Ads). Eles são descritos abaixo.</p>
+
+<h2>3. Quais dados vão para onde</h2>
+<table>
+<tr><th>Dados</th><th>Para quê</th><th>Para onde</th></tr>
+<tr><td>Alarmes, temporizadores, cronômetro, seus nomes e textos, fotos, vídeos e sons escolhidos por você, lista de cidades, configurações, lixeira</td><td>Funcionamento do aplicativo</td><td>Somente na memória do aplicativo no seu telefone. Não são transmitidos ao desenvolvedor nem a terceiros</td></tr>
+<tr><td>O nome da cidade que você adicionou na seção «Clima» e as suas coordenadas</td><td>Exibir a previsão no aplicativo e no widget do clima</td><td>O serviço Open-Meteo (open-meteo.com). Como qualquer serviço de internet, ele vê o endereço IP do dispositivo. O aplicativo não solicita a localização do telefone</td></tr>
+<tr><td>Somente quando a publicidade está ativada no aplicativo. Dados recebidos pelo módulo de anúncios: identificador de publicidade do dispositivo, endereço IP, informações do dispositivo e do aplicativo (por exemplo, modelo, versão do Android, idioma), informações sobre exibições de anúncios e ações com eles</td><td>Exibir anúncios, contabilizar exibições, proteção contra fraude</td><td>Yandex Ads (SDK de publicidade da Yandex). O conjunto de dados e as regras de tratamento são definidos pela Yandex: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>O aplicativo não coleta o seu nome, telefone, e-mail, contatos, localização precisa, imagens da câmera nem gravações do microfone.</p>
+
+<h2>4. Publicidade</h2>
+<p>O aplicativo é gratuito. Na versão atual a publicidade está desativada: o módulo de anúncios não é iniciado e nenhum dado é transmitido a ele. Se a publicidade for ativada em alguma atualização, ela será assim: um vídeo em tela cheia, não a cada abertura, mas após várias aberturas do aplicativo, e somente se houver internet. Nunca são exibidos anúncios enquanto um alarme toca. Os anúncios são exibidos pelo módulo «Yandex Ads». Você pode limitar a personalização de anúncios ou redefinir o identificador de publicidade nas configurações do telefone (seção de publicidade ou privacidade; o nome depende da versão do Android e do fabricante).</p>
+
+<h2>5. Cópias de segurança</h2>
+<p>O botão «Salvar cópia» cria um arquivo (.zip) com os seus alarmes, temporizadores, configurações e os sons, fotos e vídeos adicionados, e abre uma janela do sistema na qual você escolhe onde guardá-lo (armazenamento do telefone, Google Drive etc.). O aplicativo não envia o arquivo para lugar nenhum por conta própria. O lembrete para fazer uma cópia chega como notificação no próprio telefone e também não é enviado para lugar nenhum. Além disso, o Android pode fazer automaticamente uma cópia dos dados do aplicativo na sua conta Google, se isso estiver ativado nas configurações do telefone. Isso é feito pelo sistema; o desenvolvedor não tem acesso a essa cópia.</p>
+
+<h2>6. Para que servem as permissões</h2>
+<p>Todas as permissões e o seu estado são visíveis no próprio aplicativo: «Configurações → Permissões do aplicativo». O aplicativo não ativa nada sozinho e não pede novamente depois da sua recusa; cada permissão pode ser ativada e desativada nas configurações do sistema do telefone.</p>
+<ul>
+<li><b>Notificações:</b> exibir o toque com os botões «Parar» e «Adiar» e, se você quiser, a hora e o clima na barra de notificações.</li>
+<li><b>Alarmes exatos, início após reinicialização, funcionamento em segundo plano, vibração, «manter ativo» durante o toque:</b> para que o alarme dispare na hora e toque até você pará-lo.</li>
+<li><b>Tela com o telefone bloqueado e «Sobrepor a outros aplicativos»:</b> para que a janela do alarme abra quando você estiver na tela inicial ou em outro aplicativo. O aplicativo pede isso uma única vez; depois você pode ativar em «Configurações → Permissões do aplicativo».</li>
+<li><b>Funcionamento em segundo plano em telefones Xiaomi, Huawei, Samsung e outros:</b> as linhas «Sem restrições de bateria» e «Início automático e segundo plano» em «Configurações → Permissões do aplicativo» apenas abrem telas do sistema do telefone, nas quais você mesmo permite que o aplicativo funcione em segundo plano. Nenhum dado é enviado e não é preciso uma permissão separada.</li>
+<li><b>Internet:</b> previsão do tempo e, se a publicidade estiver ativada, exibição de anúncios.</li>
+</ul>
+<p>Não é solicitado acesso a contatos, câmera, microfone, SMS nem à localização do telefone.</p>
+
+<h2>7. Compartilhamento com terceiros</h2>
+<p>Os dados são transmitidos apenas aos serviços da tabela acima (Open-Meteo e, se a publicidade estiver ativada, Yandex), na medida necessária ao seu funcionamento. O desenvolvedor não vende dados nem os usa para outros fins. O Open-Meteo está localizado fora da Rússia, portanto a solicitação de clima (nome da cidade, coordenadas e endereço IP do dispositivo) vai para o exterior. Se você não usar a seção «Clima» nem o widget do clima, essa solicitação não é enviada.</p>
+
+<h2>8. Widgets e notificações</h2>
+<p>Os widgets de relógio e clima e as notificações na barra funcionam no seu telefone. O widget de relógio não envia dados. O widget do clima usa a mesma solicitação ao Open-Meteo que a seção «Clima». As notificações são criadas pelo próprio aplicativo e não passam por servidores do desenvolvedor nem de terceiros.</p>
+
+<h2>9. Bases legais e os seus direitos</h2>
+<p>O desenvolvedor não recebe os seus dados pessoais e não os reúne em um banco de dados: tudo o que você insere permanece no seu telefone e você mesmo dispõe disso. Os dados são transmitidos aos serviços da seção 3 quando você mesmo usa o clima ou (com a publicidade ativada) vê anúncios. Você pode interromper isso a qualquer momento: excluir a cidade da seção «Clima», remover o widget do clima, desativar as configurações de publicidade no telefone, revogar as permissões nas configurações do Android ou desinstalar o aplicativo.</p>
+<p>Você tem o direito de saber quais dados sobre você são tratados, de exigir a sua retificação, bloqueio ou exclusão, de retirar o consentimento para o tratamento e de apresentar reclamação à autoridade de proteção dos direitos dos titulares de dados pessoais (Roskomnadzor). Para enviar uma solicitação ao desenvolvedor, escreva para o e-mail da seção 1; a resposta será dada nos prazos estabelecidos pela legislação da Federação Russa.</p>
+
+<h2>10. Prazo de armazenamento e exclusão dos dados</h2>
+<p>Os dados do aplicativo ficam no seu telefone até que você os exclua ou desinstale o aplicativo. Alarmes excluídos e temporizadores preparados ficam na lixeira por 30 dias e depois são excluídos automaticamente. Para excluir tudo de uma vez, desinstale o aplicativo ou limpe os seus dados nas configurações do Android (Aplicativos → Standard Alarm Clock → Armazenamento → Limpar dados). Os arquivos de cópia de segurança que você mesmo salvou são excluídos no local onde você os colocou. Serviços de terceiros guardam dados segundo as suas próprias regras; links e nomes estão indicados acima. Como o desenvolvedor não tem os seus dados, não há nada a excluir do lado dele; em caso de dúvidas, escreva para o e-mail da seção 1.</p>
+
+<h2>11. Crianças</h2>
+<p>O aplicativo não se destina especificamente a crianças e o desenvolvedor não coleta conscientemente dados de crianças. O aplicativo não exige cadastro e não pede a idade.</p>
+
+<h2>12. Alterações</h2>
+<p>Se o aplicativo ganhar novas funções que trabalhem com dados (por exemplo, contas, sincronização na nuvem, pagamentos ou ativação da publicidade), esta política será atualizada antes do lançamento delas. A data da última alteração está no topo da página.</p>
+
+<h2>13. Contato</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. Para dúvidas sobre dados e para solicitações conforme a seção 9, escreva para este e-mail.</p>
+</div>
+<div data-l="it" data-n="Italiano" data-t="Informativa sulla privacy: Standard Alarm Clock" hidden>
+<h1>Informativa sulla privacy dell’app «Standard Alarm Clock»</h1>
+<p class="mut">In vigore dal 21 novembre 2026. Nome del pacchetto dell’app: app.budilnik.my.</p>
+
+<h2>1. Chi è responsabile del trattamento dei dati</h2>
+<p>Seven Knot (di seguito lo «sviluppatore»).<br>
+Contatto per le questioni sui dati: sevenknot.apps@gmail.com.</p>
+
+<h2>2. In breve</h2>
+<p>Lo sviluppatore non ha alcun server a cui l’app invii i tuoi dati. Sveglie, timer, nomi, testi, foto, video, suoni e impostazioni sono conservati solo nella memoria del tuo telefono. L’app non ha registrazione né account. All’esterno escono soltanto richieste a servizi di terze parti: le previsioni meteo (Open-Meteo) e, se nell’app è attivata la pubblicità, la visualizzazione degli annunci (Yandex Ads). Sono descritti di seguito.</p>
+
+<h2>3. Quali dati vanno dove</h2>
+<table>
+<tr><th>Dati</th><th>Perché</th><th>Dove</th></tr>
+<tr><td>Sveglie, timer, cronometro, i loro nomi e testi, foto, video e suoni da te scelti, elenco delle città, impostazioni, cestino</td><td>Funzionamento dell’app</td><td>Solo nella memoria dell’app sul tuo telefono. Non vengono trasmessi allo sviluppatore né a terzi</td></tr>
+<tr><td>Il nome della città che hai aggiunto nella sezione «Meteo» e le sue coordinate</td><td>Mostrare le previsioni nell’app e nel widget meteo</td><td>Il servizio Open-Meteo (open-meteo.com). Come qualsiasi servizio internet, vede l’indirizzo IP del dispositivo. L’app non richiede la posizione del telefono</td></tr>
+<tr><td>Solo quando nell’app è attivata la pubblicità. Dati ricevuti dal modulo pubblicitario: identificativo pubblicitario del dispositivo, indirizzo IP, informazioni sul dispositivo e sull’app (ad esempio modello, versione di Android, lingua), informazioni sulle visualizzazioni degli annunci e sulle azioni compiute</td><td>Mostrare annunci, conteggio delle visualizzazioni, protezione dalle frodi</td><td>Yandex Ads (SDK pubblicitario di Yandex). L’insieme dei dati e le regole di trattamento sono stabiliti da Yandex: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>L’app non raccoglie il tuo nome, telefono, e-mail, contatti, posizione precisa, immagini della fotocamera né registrazioni del microfono.</p>
+
+<h2>4. Pubblicità</h2>
+<p>L’app è gratuita. Nella versione attuale la pubblicità è disattivata: il modulo pubblicitario non viene avviato e non gli vengono trasmessi dati. Se la pubblicità verrà attivata in un aggiornamento, sarà così: un video a schermo intero, non a ogni avvio ma dopo diversi accessi all’app, e solo se c’è internet. Durante lo squillo di una sveglia non vengono mai mostrati annunci. Gli annunci sono mostrati dal modulo «Yandex Ads». Puoi limitare la personalizzazione degli annunci o reimpostare l’identificativo pubblicitario nelle impostazioni del telefono (sezione pubblicità o privacy; il nome dipende dalla versione di Android e dal produttore).</p>
+
+<h2>5. Copie di backup</h2>
+<p>Il pulsante «Salva copia» crea un file (archivio .zip) con le tue sveglie, i timer, le impostazioni e i suoni, le foto e i video aggiunti, e apre una finestra di sistema in cui scegli dove salvarlo (memoria del telefono, Google Drive ecc.). L’app non invia il file da nessuna parte per conto proprio. Il promemoria per fare una copia arriva come notifica sul telefono stesso e non viene inviato da nessuna parte. Inoltre Android può eseguire automaticamente il backup dei dati dell’app nel tuo account Google, se ciò è attivato nelle impostazioni del telefono. Lo fa il sistema; lo sviluppatore non ha accesso a tale copia.</p>
+
+<h2>6. A cosa servono le autorizzazioni</h2>
+<p>Tutte le autorizzazioni e il loro stato sono visibili nell’app stessa: «Impostazioni → Autorizzazioni dell’app». L’app non attiva nulla da sola e non richiede di nuovo dopo il tuo rifiuto; ogni autorizzazione può essere attivata e disattivata nelle impostazioni di sistema del telefono.</p>
+<ul>
+<li><b>Notifiche:</b> mostrare lo squillo con i pulsanti «Stop» e «Posticipa» e, se lo desideri, l’ora e il meteo nella tendina delle notifiche.</li>
+<li><b>Sveglie esatte, avvio dopo il riavvio, funzionamento in background, vibrazione, «mantieni attivo» durante lo squillo:</b> affinché la sveglia suoni in orario e continui a squillare finché non la fermi.</li>
+<li><b>Schermo a telefono bloccato e «Mostra sopra altre app»:</b> affinché la finestra della sveglia si apra quando sei nella schermata iniziale o in un’altra app. L’app lo chiede una sola volta; puoi attivarlo in seguito in «Impostazioni → Autorizzazioni dell’app».</li>
+<li><b>Funzionamento in background su telefoni Xiaomi, Huawei, Samsung e altri:</b> le voci «Nessuna restrizione della batteria» e «Avvio automatico e background» in «Impostazioni → Autorizzazioni dell’app» aprono soltanto le schermate di sistema del telefono, dove sei tu a consentire all’app di funzionare in background. Nessun dato viene inviato e non serve un’autorizzazione separata.</li>
+<li><b>Internet:</b> previsioni meteo e, se la pubblicità è attivata, visualizzazione degli annunci.</li>
+</ul>
+<p>Non viene richiesto l’accesso a contatti, fotocamera, microfono, SMS e posizione del telefono.</p>
+
+<h2>7. Comunicazione a terzi</h2>
+<p>I dati sono trasmessi solo ai servizi della tabella sopra (Open-Meteo e, se la pubblicità è attivata, Yandex), nella misura necessaria al loro funzionamento. Lo sviluppatore non vende i dati e non li usa per altri scopi. Open-Meteo si trova fuori dalla Russia, quindi la richiesta meteo (nome della città, coordinate e indirizzo IP del dispositivo) va all’estero. Se non usi la sezione «Meteo» e il widget meteo, questa richiesta non viene inviata.</p>
+
+<h2>8. Widget e notifiche</h2>
+<p>I widget dell’orologio e del meteo e le notifiche nella tendina funzionano sul tuo telefono. Il widget dell’orologio non invia dati. Il widget meteo usa la stessa richiesta a Open-Meteo della sezione «Meteo». Le notifiche sono create dall’app stessa e non passano per i server dello sviluppatore o di terzi.</p>
+
+<h2>9. Basi giuridiche e i tuoi diritti</h2>
+<p>Lo sviluppatore non riceve i tuoi dati personali e non li raccoglie in una banca dati: tutto ciò che inserisci resta sul tuo telefono e ne disponi tu stesso. I dati sono trasmessi ai servizi della sezione 3 quando sei tu a usare il meteo o (con la pubblicità attivata) a vedere gli annunci. Puoi smettere in qualsiasi momento: eliminare la città dalla sezione «Meteo», rimuovere il widget meteo, disattivare le impostazioni pubblicitarie sul telefono, revocare le autorizzazioni nelle impostazioni di Android o disinstallare l’app.</p>
+<p>Hai il diritto di sapere quali dati su di te sono trattati, di chiederne la rettifica, il blocco o la cancellazione, di revocare il consenso al trattamento e di presentare reclamo all’autorità per la tutela dei diritti degli interessati (Roskomnadzor). Per inviare una richiesta allo sviluppatore, scrivi all’e-mail della sezione 1; la risposta sarà data entro i termini stabiliti dalla legislazione della Federazione Russa.</p>
+
+<h2>10. Durata di conservazione e cancellazione dei dati</h2>
+<p>I dati dell’app sono conservati sul tuo telefono finché non li elimini o disinstalli l’app. Le sveglie eliminate e i timer preparati restano nel cestino per 30 giorni, poi vengono eliminati automaticamente. Per eliminare tutto in una volta, disinstalla l’app o cancella i suoi dati nelle impostazioni di Android (App → Standard Alarm Clock → Archiviazione → Cancella dati). I file di backup che hai salvato tu stesso vengono eliminati dove li hai messi. I servizi di terze parti conservano i dati secondo le proprie regole; link e nomi sono indicati sopra. Poiché lo sviluppatore non ha i tuoi dati, da parte sua non c’è nulla da eliminare; per domande scrivi all’e-mail della sezione 1.</p>
+
+<h2>11. Minori</h2>
+<p>L’app non è destinata specificamente ai minori e lo sviluppatore non raccoglie consapevolmente dati di minori. L’app non richiede registrazione e non chiede l’età.</p>
+
+<h2>12. Modifiche</h2>
+<p>Se nell’app compariranno nuove funzioni che trattano dati (ad esempio account, sincronizzazione cloud, pagamenti o attivazione della pubblicità), questa informativa sarà aggiornata prima del loro rilascio. La data dell’ultima modifica è indicata in cima alla pagina.</p>
+
+<h2>13. Contatti</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. Per domande sui dati e per le richieste di cui alla sezione 9, scrivi a questo indirizzo e-mail.</p>
+</div>
+<div data-l="tr" data-n="Türkçe" data-t="Gizlilik Politikası: Standard Alarm Clock" hidden>
+<h1>«Standard Alarm Clock» uygulamasının Gizlilik Politikası</h1>
+<p class="mut">21 Kasım 2026 tarihinden itibaren geçerlidir. Uygulama paket adı: app.budilnik.my.</p>
+
+<h2>1. Veri işlemeden kim sorumludur</h2>
+<p>Seven Knot (bundan sonra «geliştirici»).<br>
+Veri konularında iletişim: sevenknot.apps@gmail.com.</p>
+
+<h2>2. Kısaca</h2>
+<p>Geliştiricinin, uygulamanın verilerinizi göndereceği bir sunucusu yoktur. Alarmlar, zamanlayıcılar, adlar, metinler, fotoğraflar, videolar, sesler ve ayarlar yalnızca telefonunuzun belleğinde saklanır. Uygulamada kayıt ve hesap yoktur. Dışarıya yalnızca üçüncü taraf hizmetlere yapılan istekler gider: hava durumu tahmini (Open-Meteo) ve uygulamada reklam açıksa reklam gösterimi (Yandex Ads). Bunlar aşağıda açıklanmıştır.</p>
+
+<h2>3. Hangi veriler nereye gider</h2>
+<table>
+<tr><th>Veri</th><th>Ne için</th><th>Nereye</th></tr>
+<tr><td>Alarmlar, zamanlayıcılar, kronometre, bunların adları ve metinleri, seçtiğiniz fotoğraflar, videolar ve sesler, şehir listesi, ayarlar, çöp kutusu</td><td>Uygulamanın çalışması</td><td>Yalnızca telefonunuzdaki uygulama belleğine. Geliştiriciye ve üçüncü taraflara iletilmez</td></tr>
+<tr><td>«Hava Durumu» bölümüne eklediğiniz şehrin adı ve koordinatları</td><td>Tahminin uygulamada ve hava durumu widget’ında gösterilmesi</td><td>Open-Meteo hizmeti (open-meteo.com). Her internet hizmeti gibi cihazın IP adresini görür. Uygulama telefonun konumunu istemez</td></tr>
+<tr><td>Yalnızca uygulamada reklam açıkken. Reklam modülünün aldığı veriler: cihazın reklam kimliği, IP adresi, cihaz ve uygulama bilgileri (örneğin model, Android sürümü, dil), reklam gösterimleri ve reklamlarla ilgili eylemlere dair bilgiler</td><td>Reklam gösterimi, gösterim sayımı, hileli eylemlere karşı koruma</td><td>Yandex Ads (Yandex reklam SDK’sı). Verilerin kapsamını ve işleme kurallarını Yandex belirler: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>Uygulama adınızı, telefon numaranızı, e-postanızı, kişilerinizi, kesin konumunuzu, kamera görüntülerini ve mikrofon kayıtlarını toplamaz.</p>
+
+<h2>4. Reklam</h2>
+<p>Uygulama ücretsizdir. Mevcut sürümde reklam kapalıdır: reklam modülü başlatılmaz ve ona veri iletilmez. Reklam bir güncellemede açılırsa şöyle görünecektir: her açılışta değil, uygulamaya birkaç girişten sonra gösterilen tek bir tam ekran video ve yalnızca internet varsa. Alarm çalarken reklam asla gösterilmez. Reklamları «Yandex Ads» modülü gösterir. Reklam kişiselleştirmesini sınırlayabilir veya reklam kimliğini telefon ayarlarından sıfırlayabilirsiniz (reklam veya gizlilik bölümü; adı Android sürümüne ve üreticiye göre değişir).</p>
+
+<h2>5. Yedek kopyalar</h2>
+<p>«Kopyayı kaydet» düğmesi alarmlarınızı, zamanlayıcılarınızı, ayarlarınızı ve eklediğiniz sesleri, fotoğrafları ve videoları içeren bir dosya (.zip arşivi) oluşturur ve nereye koyacağınızı seçtiğiniz bir sistem penceresi açar (telefon belleği, Google Drive vb.). Uygulama dosyayı kendiliğinden hiçbir yere göndermez. Kopya alma hatırlatması telefonun kendisinde bildirim olarak gelir ve o da hiçbir yere gönderilmez. Ayrıca telefon ayarlarında etkinse Android, uygulama verilerini Google hesabınıza otomatik olarak yedekleyebilir. Bunu sistem yapar; geliştiricinin böyle bir kopyaya erişimi yoktur.</p>
+
+<h2>6. İzinler ne için gerekli</h2>
+<p>Tüm izinler ve durumları uygulamanın içinde görülebilir: «Ayarlar → Uygulama izinleri». Uygulama kendiliğinden hiçbir şeyi açmaz ve reddinizden sonra yeniden istemez; her izin telefonun sistem ayarlarında açılıp kapatılabilir.</p>
+<ul>
+<li><b>Bildirimler:</b> «Durdur» ve «Ertele» düğmeleriyle çalma ekranının ve isterseniz saat ile hava durumunun bildirim panelinde gösterilmesi.</li>
+<li><b>Tam zamanlı alarmlar, yeniden başlatmadan sonra başlatma, arka planda çalışma, titreşim, çalma sırasında «uyanık tut»:</b> alarmın zamanında çalması ve siz durdurana kadar çalmaya devam etmesi için.</li>
+<li><b>Kilitli telefonda ekran ve «Diğer uygulamaların üzerinde göster»:</b> ana ekrandayken veya başka bir uygulamadayken alarm penceresinin açılması için. Uygulama bunu bir kez ister; daha sonra «Ayarlar → Uygulama izinleri» bölümünden açabilirsiniz.</li>
+<li><b>Xiaomi, Huawei, Samsung ve diğer telefonlarda arka planda çalışma:</b> «Ayarlar → Uygulama izinleri» içindeki «Pil kısıtlaması yok» ve «Otomatik başlatma ve arka plan» satırları yalnızca telefonun sistem ekranlarını açar; uygulamanın arka planda çalışmasına orada siz izin verirsiniz. Bu sırada hiçbir veri gönderilmez, ayrı bir izin gerekmez.</li>
+<li><b>İnternet:</b> hava durumu tahmini ve reklam açıksa reklam gösterimi.</li>
+</ul>
+<p>Kişilere, kameraya, mikrofona, SMS’e ve telefonun konumuna erişim istenmez.</p>
+
+<h2>7. Üçüncü taraflara aktarım</h2>
+<p>Veriler yalnızca yukarıdaki tabloda yer alan hizmetlere (Open-Meteo ve reklam açıksa Yandex), çalışmaları için gereken ölçüde aktarılır. Geliştirici verileri satmaz ve başka amaçlarla kullanmaz. Open-Meteo Rusya dışındadır, bu nedenle hava durumu isteği (şehir adı, koordinatlar ve cihazın IP adresi) yurt dışına gider. «Hava Durumu» bölümünü ve hava durumu widget’ını kullanmıyorsanız bu istek gönderilmez.</p>
+
+<h2>8. Widget’lar ve bildirimler</h2>
+<p>Saat ve hava durumu widget’ları ile bildirim panelindeki bildirimler telefonunuzda çalışır. Saat widget’ı veri göndermez. Hava durumu widget’ı, «Hava Durumu» bölümüyle aynı Open-Meteo isteğini kullanır. Bildirimleri uygulamanın kendisi oluşturur; geliştiricinin veya üçüncü tarafların sunucularından geçmez.</p>
+
+<h2>9. Hukuki dayanaklar ve haklarınız</h2>
+<p>Geliştirici kişisel verilerinizi almaz ve bir veri tabanında toplamaz: girdiğiniz her şey telefonunuzda kalır ve bunlar üzerinde siz tasarruf edersiniz. Veriler, 3. bölümdeki hizmetlere siz hava durumunu kullandığınızda veya (reklam açıksa) reklam izlediğinizde aktarılır. Bunu istediğiniz an durdurabilirsiniz: şehri «Hava Durumu» bölümünden silin, hava durumu widget’ını kaldırın, telefondaki reklam ayarlarını kapatın, izinleri Android ayarlarından geri alın veya uygulamayı kaldırın.</p>
+<p>Hakkınızda hangi verilerin işlendiğini öğrenme, bunların düzeltilmesini, engellenmesini veya silinmesini isteme, işlemeye verdiğiniz rızayı geri çekme ve kişisel veri sahiplerinin haklarını koruyan yetkili kuruma (Roskomnadzor) şikâyette bulunma hakkına sahipsiniz. Geliştiriciye talep göndermek için 1. bölümdeki e-postaya yazın; yanıt, Rusya Federasyonu mevzuatında öngörülen sürelerde verilecektir.</p>
+
+<h2>10. Saklama süresi ve verilerin silinmesi</h2>
+<p>Uygulama verileri, siz silene veya uygulamayı kaldırana kadar telefonunuzda saklanır. Silinen alarmlar ve hazırlanmış zamanlayıcılar çöp kutusunda 30 gün kalır, sonra kendiliğinden silinir. Her şeyi bir seferde silmek için uygulamayı kaldırın veya verilerini Android ayarlarından temizleyin (Uygulamalar → Standard Alarm Clock → Depolama → Verileri temizle). Kendiniz kaydettiğiniz yedek dosyaları koyduğunuz yerde silinir. Üçüncü taraf hizmetler verileri kendi kurallarına göre saklar; bağlantılar ve adlar yukarıda verilmiştir. Geliştiricinin elinde verileriniz olmadığından onun tarafında silinecek bir şey yoktur; sorularınız için 1. bölümdeki e-postaya yazın.</p>
+
+<h2>11. Çocuklar</h2>
+<p>Uygulama özellikle çocuklara yönelik değildir ve geliştirici bilerek çocukların verilerini toplamaz. Uygulama kayıt gerektirmez ve yaş sormaz.</p>
+
+<h2>12. Değişiklikler</h2>
+<p>Uygulamaya verilerle çalışan yeni özellikler gelirse (örneğin hesaplar, bulut senkronizasyonu, ödemeler veya reklamın açılması), bu politika onlar yayınlanmadan önce güncellenecektir. Son değişiklik tarihi sayfanın üstünde belirtilmiştir.</p>
+
+<h2>13. İletişim</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. Verilerle ilgili sorular ve 9. bölümdeki talepler için bu e-postaya yazın.</p>
+</div>
+<div data-l="pl" data-n="Polski" data-t="Polityka prywatności: Standard Alarm Clock" hidden>
+<h1>Polityka prywatności aplikacji «Standard Alarm Clock»</h1>
+<p class="mut">Obowiązuje od 21 listopada 2026 r. Nazwa pakietu aplikacji: app.budilnik.my.</p>
+
+<h2>1. Kto odpowiada za przetwarzanie danych</h2>
+<p>Seven Knot (dalej «deweloper»).<br>
+Kontakt w sprawach danych: sevenknot.apps@gmail.com.</p>
+
+<h2>2. W skrócie</h2>
+<p>Deweloper nie ma serwera, na który aplikacja wysyłałaby Twoje dane. Budziki, minutniki, nazwy, teksty, zdjęcia, filmy, dźwięki i ustawienia są przechowywane wyłącznie w pamięci Twojego telefonu. W aplikacji nie ma rejestracji ani kont. Na zewnątrz trafiają tylko zapytania do usług zewnętrznych: prognoza pogody (Open-Meteo) oraz, jeśli w aplikacji włączono reklamy, wyświetlanie reklam (Yandex Ads). Opisano je poniżej.</p>
+
+<h2>3. Jakie dane i dokąd trafiają</h2>
+<table>
+<tr><th>Dane</th><th>Po co</th><th>Dokąd</th></tr>
+<tr><td>Budziki, minutniki, stoper, ich nazwy i teksty, wybrane przez Ciebie zdjęcia, filmy i dźwięki, lista miast, ustawienia, kosz</td><td>Działanie aplikacji</td><td>Tylko do pamięci aplikacji na Twoim telefonie. Nie są przekazywane deweloperowi ani osobom trzecim</td></tr>
+<tr><td>Nazwa miasta dodanego w sekcji «Pogoda» i jego współrzędne</td><td>Pokazywanie prognozy w aplikacji i w widżecie pogody</td><td>Usługa Open-Meteo (open-meteo.com). Jak każda usługa internetowa widzi adres IP urządzenia. Aplikacja nie pyta o lokalizację telefonu</td></tr>
+<tr><td>Tylko gdy w aplikacji włączono reklamy. Dane otrzymywane przez moduł reklamowy: identyfikator reklamowy urządzenia, adres IP, informacje o urządzeniu i aplikacji (np. model, wersja Androida, język), informacje o wyświetleniach reklam i działaniach z nimi związanych</td><td>Wyświetlanie reklam, zliczanie wyświetleń, ochrona przed nadużyciami</td><td>Yandex Ads (reklamowy SDK Yandex). Zakres danych i zasady ich przetwarzania określa Yandex: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>Aplikacja nie zbiera Twojego imienia i nazwiska, numeru telefonu, adresu e-mail, kontaktów, dokładnej lokalizacji, obrazu z kamery ani nagrań z mikrofonu.</p>
+
+<h2>4. Reklamy</h2>
+<p>Aplikacja jest bezpłatna. W obecnej wersji reklamy są wyłączone: moduł reklamowy nie jest uruchamiany i nie są mu przekazywane żadne dane. Jeśli reklamy zostaną włączone w którejś aktualizacji, będą wyglądać tak: jeden film na pełnym ekranie, nie przy każdym uruchomieniu, lecz po kilku wejściach do aplikacji, i tylko gdy jest internet. Podczas dzwonienia budzika reklamy nigdy nie są pokazywane. Reklamy wyświetla moduł «Yandex Ads». Możesz ograniczyć personalizację reklam lub zresetować identyfikator reklamowy w ustawieniach telefonu (sekcja reklam lub prywatności; nazwa zależy od wersji Androida i producenta).</p>
+
+<h2>5. Kopie zapasowe</h2>
+<p>Przycisk «Zapisz kopię» tworzy plik (archiwum .zip) z Twoimi budzikami, minutnikami, ustawieniami oraz dodanymi dźwiękami, zdjęciami i filmami i otwiera okno systemowe, w którym wybierasz, gdzie go zapisać (pamięć telefonu, Google Drive itp.). Aplikacja sama nigdzie nie wysyła tego pliku. Przypomnienie o wykonaniu kopii przychodzi jako powiadomienie na samym telefonie i również nigdzie nie jest wysyłane. Ponadto Android może automatycznie tworzyć kopię danych aplikacji na Twoim koncie Google, jeśli włączono to w ustawieniach telefonu. Robi to system; deweloper nie ma dostępu do takiej kopii.</p>
+
+<h2>6. Do czego potrzebne są uprawnienia</h2>
+<p>Wszystkie uprawnienia i ich stan widać w samej aplikacji: «Ustawienia → Uprawnienia aplikacji». Aplikacja niczego nie włącza sama i po Twojej odmowie nie prosi ponownie; każde uprawnienie można włączyć i wyłączyć w ustawieniach systemowych telefonu.</p>
+<ul>
+<li><b>Powiadomienia:</b> pokazanie dzwonka z przyciskami «Stop» i «Drzemka» oraz, jeśli chcesz, godziny i pogody w panelu powiadomień.</li>
+<li><b>Dokładne budziki, uruchomienie po restarcie, praca w tle, wibracja, «nie usypiaj» podczas dzwonienia:</b> aby budzik zadzwonił na czas i dzwonił, dopóki go nie zatrzymasz.</li>
+<li><b>Ekran na zablokowanym telefonie i «Wyświetlanie nad innymi aplikacjami»:</b> aby okno budzika otwierało się, gdy jesteś na ekranie głównym lub w innej aplikacji. Aplikacja prosi o to jeden raz; później można to włączyć w «Ustawienia → Uprawnienia aplikacji».</li>
+<li><b>Praca w tle na telefonach Xiaomi, Huawei, Samsung i innych:</b> wiersze «Bez ograniczeń baterii» i «Autostart i tło» w «Ustawienia → Uprawnienia aplikacji» jedynie otwierają systemowe ekrany telefonu, na których sam zezwalasz aplikacji na pracę w tle. Żadne dane nie są przy tym nigdzie przekazywane, osobne uprawnienie nie jest potrzebne.</li>
+<li><b>Internet:</b> prognoza pogody oraz, jeśli włączono reklamy, wyświetlanie reklam.</li>
+</ul>
+<p>Dostęp do kontaktów, aparatu, mikrofonu, SMS-ów i lokalizacji telefonu nie jest wymagany.</p>
+
+<h2>7. Przekazywanie osobom trzecim</h2>
+<p>Dane są przekazywane tylko usługom z powyższej tabeli (Open-Meteo oraz, przy włączonych reklamach, Yandex) w zakresie potrzebnym do ich działania. Deweloper nie sprzedaje danych i nie wykorzystuje ich do innych celów. Open-Meteo znajduje się poza Rosją, dlatego zapytanie o pogodę (nazwa miasta, współrzędne i adres IP urządzenia) trafia za granicę. Jeśli nie korzystasz z sekcji «Pogoda» i widżetu pogody, to zapytanie nie jest wysyłane.</p>
+
+<h2>8. Widżety i powiadomienia</h2>
+<p>Widżety zegara i pogody oraz powiadomienia w panelu działają na Twoim telefonie. Widżet zegara nie wysyła danych. Widżet pogody używa tego samego zapytania do Open-Meteo co sekcja «Pogoda». Powiadomienia tworzy sama aplikacja; nie przechodzą one przez serwery dewelopera ani osób trzecich.</p>
+
+<h2>9. Podstawy prawne i Twoje prawa</h2>
+<p>Deweloper nie otrzymuje Twoich danych osobowych i nie gromadzi ich w bazie: wszystko, co wprowadzasz, pozostaje na Twoim telefonie, a Ty sam nimi dysponujesz. Dane są przekazywane usługom z sekcji 3, gdy sam korzystasz z pogody lub (przy włączonych reklamach) oglądasz reklamy. W każdej chwili możesz to zakończyć: usunąć miasto z sekcji «Pogoda», usunąć widżet pogody, wyłączyć ustawienia reklamowe w telefonie, cofnąć uprawnienia w ustawieniach Androida lub odinstalować aplikację.</p>
+<p>Masz prawo dowiedzieć się, jakie dane o Tobie są przetwarzane, żądać ich sprostowania, zablokowania lub usunięcia, cofnąć zgodę na przetwarzanie oraz złożyć skargę do organu chroniącego prawa osób, których dane dotyczą (Roskomnadzor). Aby skierować wniosek do dewelopera, napisz na adres e-mail z sekcji 1; odpowiedź zostanie udzielona w terminach określonych przez prawo Federacji Rosyjskiej.</p>
+
+<h2>10. Okres przechowywania i usuwanie danych</h2>
+<p>Dane aplikacji są przechowywane na Twoim telefonie, dopóki ich nie usuniesz lub nie odinstalujesz aplikacji. Usunięte budziki i przygotowane minutniki leżą w koszu 30 dni, po czym są usuwane automatycznie. Aby usunąć wszystko naraz, odinstaluj aplikację lub wyczyść jej dane w ustawieniach Androida (Aplikacje → Standard Alarm Clock → Pamięć → Wyczyść dane). Pliki kopii zapasowych zapisane przez Ciebie samego są usuwane tam, gdzie je umieściłeś. Usługi zewnętrzne przechowują dane według własnych zasad; linki i nazwy podano powyżej. Ponieważ deweloper nie ma Twoich danych, po jego stronie nie ma czego usuwać; w razie pytań pisz na adres e-mail z sekcji 1.</p>
+
+<h2>11. Dzieci</h2>
+<p>Aplikacja nie jest przeznaczona specjalnie dla dzieci, a deweloper świadomie nie zbiera danych dzieci. Aplikacja nie wymaga rejestracji i nie pyta o wiek.</p>
+
+<h2>12. Zmiany</h2>
+<p>Jeśli w aplikacji pojawią się nowe funkcje pracujące z danymi (na przykład konta, synchronizacja w chmurze, płatności lub włączenie reklam), niniejsza polityka zostanie zaktualizowana przed ich wydaniem. Data ostatniej zmiany jest podana u góry strony.</p>
+
+<h2>13. Kontakt</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. W sprawach dotyczących danych i wniosków z sekcji 9 pisz na ten adres e-mail.</p>
+</div>
+<div data-l="ja" data-n="日本語" data-t="プライバシーポリシー：Standard Alarm Clock" hidden>
+<h1>アプリ「Standard Alarm Clock」のプライバシーポリシー</h1>
+<p class="mut">2026年11月21日から有効です。アプリのパッケージ名：app.budilnik.my。</p>
+
+<h2>1. データ処理の責任者</h2>
+<p>Seven Knot（以下「開発者」）。<br>
+データに関するお問い合わせ先：sevenknot.apps@gmail.com。</p>
+
+<h2>2. 概要</h2>
+<p>開発者には、アプリがお客様のデータを送信するサーバーはありません。アラーム、タイマー、名前、テキスト、写真、動画、音、設定は、お使いのスマートフォンのメモリにのみ保存されます。アプリには登録もアカウントもありません。外部に送信されるのは、第三者サービスへのリクエストのみです：天気予報（Open-Meteo）と、アプリで広告が有効な場合の広告表示（Yandex広告）。これらは以下で説明します。</p>
+
+<h2>3. どのデータがどこへ送られるか</h2>
+<table>
+<tr><th>データ</th><th>目的</th><th>送信先</th></tr>
+<tr><td>アラーム、タイマー、ストップウォッチ、それらの名前とテキスト、お客様が選んだ写真・動画・音、都市のリスト、設定、ごみ箱</td><td>アプリの動作</td><td>お使いのスマートフォン上のアプリのメモリのみ。開発者にも第三者にも送信されません</td></tr>
+<tr><td>「天気」セクションに追加した都市の名前とその座標</td><td>アプリおよび天気ウィジェットでの予報表示</td><td>Open-Meteoサービス（open-meteo.com）。他のインターネットサービスと同様に、端末のIPアドレスが見えます。アプリはスマートフォンの位置情報を要求しません</td></tr>
+<tr><td>アプリで広告が有効な場合のみ。広告モジュールが受け取るデータ：端末の広告ID、IPアドレス、端末とアプリの情報（例：機種、Androidのバージョン、言語）、広告の表示と広告に対する操作の情報</td><td>広告の表示、表示回数の集計、不正行為の防止</td><td>Yandex広告（Yandexの広告SDK）。データの範囲と処理規則はYandexが定めます：<span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>アプリは、お客様の氏名、電話番号、メールアドレス、連絡先、正確な位置情報、カメラの画像、マイクの録音を収集しません。</p>
+
+<h2>4. 広告</h2>
+<p>アプリは無料です。現在のバージョンでは広告は無効です：広告モジュールは起動せず、データも渡されません。今後のアップデートで広告が有効になる場合は、次のような形になります：毎回の起動ではなく、アプリを何回か開いた後に全画面の動画を1本表示し、インターネットに接続している場合のみ表示します。アラームが鳴っている間は広告を表示しません。広告は「Yandex広告」モジュールが表示します。広告のパーソナライズを制限したり、広告IDをリセットしたりするには、スマートフォンの設定（広告またはプライバシーの項目。名称はAndroidのバージョンやメーカーにより異なります）で行えます。</p>
+
+<h2>5. バックアップ</h2>
+<p>「コピーを保存」ボタンは、アラーム、タイマー、設定、追加した音・写真・動画を含むファイル（.zipアーカイブ）を作成し、保存先（スマートフォンのストレージ、Google Driveなど）を選ぶシステムウィンドウを開きます。アプリ自身がファイルをどこかに送信することはありません。コピー作成のリマインダーはスマートフォン上の通知として届き、これもどこにも送信されません。また、スマートフォンの設定で有効にしている場合、Androidがアプリのデータをお客様のGoogleアカウントに自動でバックアップすることがあります。これはシステムが行うもので、開発者はそのコピーにアクセスできません。</p>
+
+<h2>6. 権限が必要な理由</h2>
+<p>すべての権限とその状態は、アプリ内の「設定 → アプリの権限」で確認できます。アプリは自ら何も有効にせず、お客様が拒否した後に再度要求することもありません。各権限は、スマートフォンのシステム設定でオン・オフできます。</p>
+<ul>
+<li><b>通知：</b>「停止」「スヌーズ」ボタン付きの着信画面の表示、およびご希望に応じて通知シェードでの時刻と天気の表示。</li>
+<li><b>正確なアラーム、再起動後の起動、バックグラウンド動作、バイブレーション、鳴動中の「スリープさせない」：</b>アラームが時間どおりに作動し、お客様が止めるまで鳴り続けるため。</li>
+<li><b>ロック中の画面表示と「他のアプリの上に重ねて表示」：</b>ホーム画面や他のアプリを使用中でもアラームのウィンドウが開くため。アプリはこれを一度だけ求めます。後から「設定 → アプリの権限」で有効にできます。</li>
+<li><b>Xiaomi、Huawei、Samsungなどのスマートフォンでのバックグラウンド動作：</b>「設定 → アプリの権限」にある「バッテリー制限なし」と「自動起動とバックグラウンド」の項目は、スマートフォンのシステム画面を開くだけで、そこでお客様ご自身がアプリのバックグラウンド動作を許可します。その際データはどこにも送信されず、別途の権限も不要です。</li>
+<li><b>インターネット：</b>天気予報と、広告が有効な場合の広告表示。</li>
+</ul>
+<p>連絡先、カメラ、マイク、SMS、スマートフォンの位置情報へのアクセスは要求しません。</p>
+
+<h2>7. 第三者への提供</h2>
+<p>データは、上の表のサービス（Open-Meteo、および広告が有効な場合はYandex）に、その動作に必要な範囲でのみ送信されます。開発者はデータを販売せず、他の目的にも使用しません。Open-Meteoはロシア国外にあるため、天気のリクエスト（都市名、座標、端末のIPアドレス）は国外に送信されます。「天気」セクションと天気ウィジェットを使用しない場合、このリクエストは送信されません。</p>
+
+<h2>8. ウィジェットと通知</h2>
+<p>時計と天気のウィジェット、および通知シェードの通知は、お使いのスマートフォン上で動作します。時計ウィジェットはデータを送信しません。天気ウィジェットは「天気」セクションと同じOpen-Meteoへのリクエストを使用します。通知はアプリ自身が作成し、開発者や第三者のサーバーを経由しません。</p>
+
+<h2>9. 法的根拠とお客様の権利</h2>
+<p>開発者はお客様の個人データを受け取らず、データベースに集めることもありません。入力したものはすべてお使いのスマートフォンに残り、お客様ご自身が管理します。第3項のサービスへは、お客様ご自身が天気を利用したとき、または（広告が有効な場合）広告を見たときにデータが送信されます。いつでも停止できます：「天気」セクションから都市を削除する、天気ウィジェットを削除する、スマートフォンの広告設定をオフにする、Androidの設定で権限を取り消す、またはアプリをアンインストールする。</p>
+<p>お客様には、自分に関するどのデータが処理されているかを知る権利、その訂正・ブロック・削除を求める権利、処理への同意を撤回する権利、および個人データ主体の権利保護を担当する機関（Roskomnadzor）に苦情を申し立てる権利があります。開発者に請求を送るには、第1項のメールアドレスにご連絡ください。回答はロシア連邦の法令が定める期間内に行われます。</p>
+
+<h2>10. 保存期間とデータの削除</h2>
+<p>アプリのデータは、お客様が削除するかアプリをアンインストールするまで、スマートフォンに保存されます。削除したアラームと準備済みのタイマーはごみ箱に30日間残り、その後自動的に削除されます。すべてを一度に削除するには、アプリをアンインストールするか、Androidの設定でデータを消去してください（アプリ → Standard Alarm Clock → ストレージ → データを消去）。お客様ご自身が保存したバックアップファイルは、保存した場所で削除されます。第三者サービスは独自の規則でデータを保管します。リンクと名称は上記のとおりです。開発者はお客様のデータを保有していないため、開発者側で削除するものはありません。ご質問は第1項のメールアドレスまでお寄せください。</p>
+
+<h2>11. 子ども</h2>
+<p>このアプリは特に子どもを対象としておらず、開発者は意図的に子どものデータを収集しません。アプリは登録を必要とせず、年齢の入力も求めません。</p>
+
+<h2>12. 変更</h2>
+<p>アプリにデータを扱う新機能（例：アカウント、クラウド同期、決済、広告の有効化）が加わる場合、本ポリシーはそれらの公開前に更新されます。最終更新日はページの上部に記載されています。</p>
+
+<h2>13. お問い合わせ</h2>
+<p>Seven Knot、sevenknot.apps@gmail.com。データに関するご質問および第9項の請求は、このメールアドレスまでご連絡ください。</p>
+</div>
+<div data-l="ko" data-n="한국어" data-t="개인정보 처리방침: Standard Alarm Clock" hidden>
+<h1>앱 «Standard Alarm Clock» 개인정보 처리방침</h1>
+<p class="mut">2026년 11월 21일부터 시행됩니다. 앱 패키지 이름: app.budilnik.my.</p>
+
+<h2>1. 데이터 처리 책임자</h2>
+<p>Seven Knot(이하 «개발자»).<br>
+데이터 관련 문의: sevenknot.apps@gmail.com.</p>
+
+<h2>2. 요약</h2>
+<p>개발자에게는 앱이 귀하의 데이터를 보내는 서버가 없습니다. 알람, 타이머, 이름, 텍스트, 사진, 동영상, 소리, 설정은 귀하의 휴대전화 저장소에만 보관됩니다. 앱에는 가입이나 계정이 없습니다. 외부로 나가는 것은 제3자 서비스에 대한 요청뿐입니다: 날씨 예보(Open-Meteo)와, 앱에서 광고가 켜져 있는 경우 광고 표시(Yandex 광고). 아래에 설명되어 있습니다.</p>
+
+<h2>3. 어떤 데이터가 어디로 가는가</h2>
+<table>
+<tr><th>데이터</th><th>목적</th><th>전송처</th></tr>
+<tr><td>알람, 타이머, 스톱워치, 그 이름과 텍스트, 귀하가 선택한 사진·동영상·소리, 도시 목록, 설정, 휴지통</td><td>앱 작동</td><td>귀하의 휴대전화에 있는 앱 저장소에만. 개발자나 제3자에게 전달되지 않습니다</td></tr>
+<tr><td>«날씨» 섹션에 추가한 도시의 이름과 좌표</td><td>앱과 날씨 위젯에 예보 표시</td><td>Open-Meteo 서비스(open-meteo.com). 다른 인터넷 서비스와 마찬가지로 기기의 IP 주소를 볼 수 있습니다. 앱은 휴대전화의 위치를 요청하지 않습니다</td></tr>
+<tr><td>앱에서 광고가 켜져 있을 때만. 광고 모듈이 받는 데이터: 기기의 광고 ID, IP 주소, 기기 및 앱 정보(예: 모델, Android 버전, 언어), 광고 노출 및 광고에 대한 행동 정보</td><td>광고 표시, 노출 집계, 부정 행위 방지</td><td>Yandex 광고(Yandex 광고 SDK). 데이터의 범위와 처리 규칙은 Yandex가 정합니다: <span>https://yandex.ru/legal/confidential/</span></td></tr>
+</table>
+<p>앱은 귀하의 이름, 전화번호, 이메일, 연락처, 정확한 위치, 카메라 이미지, 마이크 녹음을 수집하지 않습니다.</p>
+
+<h2>4. 광고</h2>
+<p>앱은 무료입니다. 현재 버전에서는 광고가 꺼져 있습니다: 광고 모듈이 실행되지 않으며 데이터도 전달되지 않습니다. 업데이트에서 광고가 켜지는 경우 다음과 같은 모습이 됩니다: 매번 실행할 때가 아니라 앱을 여러 번 연 뒤에 전체 화면 동영상 하나가 표시되며, 인터넷이 연결되어 있을 때만 표시됩니다. 알람이 울리는 동안에는 광고가 표시되지 않습니다. 광고는 «Yandex 광고» 모듈이 표시합니다. 휴대전화 설정(광고 또는 개인정보 항목, 이름은 Android 버전과 제조사에 따라 다름)에서 광고 맞춤 설정을 제한하거나 광고 ID를 재설정할 수 있습니다.</p>
+
+<h2>5. 백업</h2>
+<p>«사본 저장» 버튼은 알람, 타이머, 설정과 추가한 소리·사진·동영상이 담긴 파일(.zip 압축 파일)을 만들고, 저장 위치(휴대전화 저장소, Google Drive 등)를 선택하는 시스템 창을 엽니다. 앱이 직접 이 파일을 어디론가 보내지는 않습니다. 사본 만들기 알림은 휴대전화 자체에 알림으로 표시되며 이 또한 어디로도 전송되지 않습니다. 또한 휴대전화 설정에서 켜져 있으면 Android가 앱 데이터를 귀하의 Google 계정에 자동으로 백업할 수 있습니다. 이는 시스템이 수행하며, 개발자는 이러한 사본에 접근할 수 없습니다.</p>
+
+<h2>6. 권한이 필요한 이유</h2>
+<p>모든 권한과 그 상태는 앱 안의 «설정 → 앱 권한»에서 볼 수 있습니다. 앱은 스스로 아무것도 켜지 않으며 귀하가 거부한 뒤에는 다시 요청하지 않습니다. 각 권한은 휴대전화 시스템 설정에서 켜고 끌 수 있습니다.</p>
+<ul>
+<li><b>알림:</b> «중지» 및 «다시 알림» 버튼이 있는 알람 화면 표시, 그리고 원하시는 경우 알림 패널에 시간과 날씨 표시.</li>
+<li><b>정확한 알람, 재부팅 후 시작, 백그라운드 작동, 진동, 울리는 동안 «화면 켜 두기»:</b> 알람이 제시간에 작동하고 귀하가 멈출 때까지 계속 울리도록 하기 위해.</li>
+<li><b>잠긴 휴대전화에서의 화면 표시와 «다른 앱 위에 표시»:</b> 홈 화면이나 다른 앱을 사용 중일 때도 알람 창이 열리도록 하기 위해. 앱은 이를 한 번만 요청하며, 나중에 «설정 → 앱 권한»에서 켤 수 있습니다.</li>
+<li><b>Xiaomi, Huawei, Samsung 등 휴대전화에서의 백그라운드 작동:</b> «설정 → 앱 권한»의 «배터리 제한 없음» 및 «자동 시작 및 백그라운드» 항목은 휴대전화의 시스템 화면을 열 뿐이며, 그곳에서 귀하가 직접 앱의 백그라운드 작동을 허용합니다. 이때 데이터는 어디로도 전송되지 않으며 별도의 권한도 필요하지 않습니다.</li>
+<li><b>인터넷:</b> 날씨 예보와, 광고가 켜져 있는 경우 광고 표시.</li>
+</ul>
+<p>연락처, 카메라, 마이크, SMS, 휴대전화 위치에 대한 접근은 요청하지 않습니다.</p>
+
+<h2>7. 제3자 제공</h2>
+<p>데이터는 위 표의 서비스(Open-Meteo, 그리고 광고가 켜져 있는 경우 Yandex)에만, 그 작동에 필요한 범위에서 전달됩니다. 개발자는 데이터를 판매하지 않으며 다른 목적으로 사용하지 않습니다. Open-Meteo는 러시아 밖에 있으므로 날씨 요청(도시 이름, 좌표, 기기의 IP 주소)은 해외로 전송됩니다. «날씨» 섹션과 날씨 위젯을 사용하지 않으면 이 요청은 전송되지 않습니다.</p>
+
+<h2>8. 위젯과 알림</h2>
+<p>시계 및 날씨 위젯과 알림 패널의 알림은 귀하의 휴대전화에서 작동합니다. 시계 위젯은 데이터를 보내지 않습니다. 날씨 위젯은 «날씨» 섹션과 동일한 Open-Meteo 요청을 사용합니다. 알림은 앱 자체가 만들며 개발자나 제3자의 서버를 거치지 않습니다.</p>
+
+<h2>9. 법적 근거와 귀하의 권리</h2>
+<p>개발자는 귀하의 개인정보를 받지 않으며 데이터베이스에 수집하지도 않습니다: 귀하가 입력한 모든 것은 귀하의 휴대전화에 남아 있으며 귀하가 직접 관리합니다. 제3항의 서비스에는 귀하가 직접 날씨를 사용하거나 (광고가 켜져 있는 경우) 광고를 볼 때 데이터가 전달됩니다. 언제든지 중단할 수 있습니다: «날씨» 섹션에서 도시 삭제, 날씨 위젯 제거, 휴대전화의 광고 설정 끄기, Android 설정에서 권한 철회, 또는 앱 삭제.</p>
+<p>귀하는 자신에 관해 어떤 데이터가 처리되는지 알 권리, 그 정정·차단·삭제를 요구할 권리, 처리에 대한 동의를 철회할 권리, 그리고 개인정보 주체의 권리 보호 기관(Roskomnadzor)에 민원을 제기할 권리가 있습니다. 개발자에게 요청을 보내려면 제1항의 이메일로 연락해 주십시오. 답변은 러시아 연방 법령이 정한 기한 내에 제공됩니다.</p>
+
+<h2>10. 보관 기간 및 데이터 삭제</h2>
+<p>앱 데이터는 귀하가 삭제하거나 앱을 삭제할 때까지 휴대전화에 보관됩니다. 삭제된 알람과 준비된 타이머는 휴대전화 휴지통에 30일간 남아 있다가 자동으로 삭제됩니다. 모두 한 번에 삭제하려면 앱을 삭제하거나 Android 설정에서 앱 데이터를 지우십시오(앱 → Standard Alarm Clock → 저장공간 → 데이터 삭제). 귀하가 직접 저장한 백업 파일은 귀하가 둔 곳에서 삭제됩니다. 제3자 서비스는 자체 규칙에 따라 데이터를 보관하며, 링크와 이름은 위에 표시되어 있습니다. 개발자에게는 귀하의 데이터가 없으므로 개발자 측에서 삭제할 것이 없습니다. 문의 사항은 제1항의 이메일로 연락해 주십시오.</p>
+
+<h2>11. 아동</h2>
+<p>앱은 특별히 아동을 대상으로 하지 않으며 개발자는 아동의 데이터를 의도적으로 수집하지 않습니다. 앱은 가입을 요구하지 않으며 나이를 묻지 않습니다.</p>
+
+<h2>12. 변경</h2>
+<p>앱에 데이터를 다루는 새 기능(예: 계정, 클라우드 동기화, 결제 또는 광고 활성화)이 추가되는 경우, 본 방침은 그 출시 전에 업데이트됩니다. 마지막 변경 날짜는 페이지 상단에 표시됩니다.</p>
+
+<h2>13. 연락처</h2>
+<p>Seven Knot, sevenknot.apps@gmail.com. 데이터에 관한 문의와 제9항에 따른 요청은 이 이메일로 보내 주십시오.</p>
+</div>
 </main>
+<script>
+/* Языки: каждый язык — блок <div data-l="код" data-n="название" data-t="заголовок">. Новый язык = новый такой блок. Язык: ?lang=en, иначе язык браузера, иначе русский. */
+(function(){var B=[].slice.call(document.querySelectorAll('[data-l]')),nav=document.getElementById('lg');
+function show(c){B.forEach(function(d){d.hidden=d.dataset.l!==c});[].forEach.call(nav.children,function(b){b.setAttribute('aria-pressed',b.dataset.l===c)});
+var d=B.filter(function(x){return x.dataset.l===c})[0];document.documentElement.lang=c;document.title=d.dataset.t}
+B.forEach(function(d){var b=document.createElement('button');b.type='button';b.dataset.l=d.dataset.l;b.textContent=d.dataset.n;b.onclick=function(){show(d.dataset.l);try{history.replaceState(null,'','?lang='+d.dataset.l)}catch(e){}};nav.appendChild(b)});
+var codes=B.map(function(d){return d.dataset.l}),want=(new URLSearchParams(location.search).get('lang')||'').slice(0,2).toLowerCase(),c='ru';
+if(codes.indexOf(want)>-1)c=want;else{var L=navigator.languages||[navigator.language||'ru'];for(var i=0;i<L.length;i++){var k=String(L[i]).slice(0,2).toLowerCase();if(codes.indexOf(k)>-1){c=k;break}}}
+show(c)})();
+</script>
 </body>
 </html>
