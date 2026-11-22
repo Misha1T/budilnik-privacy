@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Политика конфиденциальности: Standard Alarm Clock</title>
 <style>
-:root{--bg:#fff;--ink:#1c1e2b;--mut:#5b5f73;--line:#dfe1ea;--mark:#fff3b0}
+:root{--bg:#fff;--ink:#1c1e2b;--mut:#5b5f73;--line:#dfe1ea;--mark:#fff3b0;color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root{--bg:#16172a;--ink:#eceefb;--mut:#a3a7c2;--line:#33355a;--mark:#5a4d00}}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 main{max-width:760px;margin:0 auto;padding:24px 18px 60px}
@@ -13,9 +13,8 @@ h1{font-size:1.5rem;line-height:1.25}h2{font-size:1.15rem;margin-top:2em}
 .mut{color:var(--mut)}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}
 td,th{border:1px solid var(--line);padding:8px 10px;text-align:start;vertical-align:top}
 mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px}
-.lg{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
-.lg button{font:inherit;font-size:.85rem;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer}
-.lg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.lg{position:sticky;top:0;z-index:10;display:flex;justify-content:flex-end;padding:8px 0;margin:0 0 10px;background:var(--bg)}
+.lg select{font:inherit;font-size:.85rem;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:var(--ink);cursor:pointer;max-width:60vw}
 </style>
 </head>
 <body>
@@ -790,11 +789,13 @@ Kontakt w sprawach danych: sevenknot.apps@gmail.com.</p>
 </div>
 </main>
 <script>
-/* Языки: каждый язык — блок <div data-l="код" data-n="название" data-t="заголовок">. Новый язык = новый такой блок. Язык: ?lang=en, иначе язык браузера, иначе русский. */
+/* Языки: каждый язык — блок <div data-l="код" data-n="название" data-t="заголовок">. Новый язык = новый такой блок (в выпадающий список он добавится сам). Язык: ?lang=en, иначе язык браузера, иначе русский. */
 (function(){var B=[].slice.call(document.querySelectorAll('[data-l]')),nav=document.getElementById('lg');
-function show(c){B.forEach(function(d){d.hidden=d.dataset.l!==c});[].forEach.call(nav.children,function(b){b.setAttribute('aria-pressed',b.dataset.l===c)});
+function show(c){B.forEach(function(d){d.hidden=d.dataset.l!==c});sel.value=c;
 var d=B.filter(function(x){return x.dataset.l===c})[0];document.documentElement.lang=c;document.title=d.dataset.t}
-B.forEach(function(d){var b=document.createElement('button');b.type='button';b.dataset.l=d.dataset.l;b.textContent=d.dataset.n;b.onclick=function(){show(d.dataset.l);try{history.replaceState(null,'','?lang='+d.dataset.l)}catch(e){}};nav.appendChild(b)});
+var sel=document.createElement('select');sel.setAttribute('aria-label','Language');
+B.forEach(function(d){var o=document.createElement('option');o.value=d.dataset.l;o.textContent=d.dataset.n;sel.appendChild(o)});
+sel.onchange=function(){show(sel.value);try{history.replaceState(null,'','?lang='+sel.value)}catch(e){}};nav.appendChild(sel);
 var codes=B.map(function(d){return d.dataset.l}),want=(new URLSearchParams(location.search).get('lang')||'').slice(0,2).toLowerCase(),c='ru';
 if(codes.indexOf(want)>-1)c=want;else{var L=navigator.languages||[navigator.language||'ru'];for(var i=0;i<L.length;i++){var k=String(L[i]).slice(0,2).toLowerCase();if(codes.indexOf(k)>-1){c=k;break}}}
 show(c)})();
